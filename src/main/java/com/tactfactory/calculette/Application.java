@@ -11,7 +11,7 @@ package com.tactfactory.calculette;
  */
 public final class Application{        
 
-    private Application() {
+    public Application() {
         super();
     }
 
@@ -20,6 +20,7 @@ public final class Application{
      * @param args Argument from CLI.
      */
     public static void main(final String[] args) {
+        new Application();
         System.out.println("Hello world !!");
     }
 }

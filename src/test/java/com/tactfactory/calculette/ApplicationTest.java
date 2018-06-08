@@ -15,6 +15,10 @@
  ******************************************************************************/
 package com.tactfactory.calculette;
 
+import static org.junit.Assert.assertNotNull;
+
+import org.junit.Test;
+
 /**
  * Test class
  * @author Aurélien Le Pévédic
@@ -22,5 +26,10 @@ package com.tactfactory.calculette;
  */
 public class ApplicationTest {
 	
-
+    @Test
+    public void testApplication() {
+        Application app = new Application();
+        Application.main(null);
+        assertNotNull(app);
+    }
 }
