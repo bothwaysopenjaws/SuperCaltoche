@@ -1,0 +1,157 @@
+// Java project (for build)
+apply plugin: 'java'
+
+// For Eclipse editor
+apply plugin: 'eclipse'
+
+// For Intelij editor
+apply plugin: 'idea'
+
+apply plugin: 'checkstyle'
+apply plugin: 'findbugs'
+apply plugin: 'pmd'
+apply plugin: 'jacoco'
+apply plugin: 'jdepend'
+
+repositories {
+    jcenter()
+    mavenCentral()
+//    maven {
+//            url "https://plugins.gradle.org/m2/"
+//            name 'Gradle'
+//    }
+}
+
+dependencies {
+  compile("joda-time:joda-time:2.10")
+  testCompile("junit:junit:4.12")
+}
+
+def gradleExtra="${project.rootDir}/gradle/script"
+def reportDir="${project.buildDir}/reports"
+
+check.dependsOn 'cpd'
+
+
+// CheckStyle
+
+checkstyle {
+//    toolVersion '7.8.1'
+    checkstyleTest.enabled = false
+    ignoreFailures = true
+    showViolations = true
+    configFile file("config/checkstyle/checkstyle.xml")
+}
+
+tasks.withType(Checkstyle) {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+
+// FindBug
+
+findbugs {
+    findbugsTest.enabled = false
+    ignoreFailures = true
+    effort = "max"
+    reportLevel = "high"
+//    excludeFilter = new File("...")
+}
+
+tasks.withType(FindBugs) {
+    reports {
+        xml.enabled = true
+        html.enabled = false
+    }
+}
+
+
+// Jacoco
+
+jacoco {
+    toolVersion = "0.8.1"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled true
+        csv.enabled true
+    }
+}
+
+
+// PMD
+
+pmd {
+    pmdTest.enabled = false
+    ruleSets = ["java-basic",
+      "java-braces",
+      "java-clone",
+      "java-codesize",
+      "java-comments",
+      "java-controversial",
+      "java-coupling",
+      "java-design",
+      "java-empty",
+      "java-finalizers",
+      "java-imports",
+      "java-naming",
+      "java-optimizations",
+      "java-strings",
+      "java-unusedcode"]
+//    toolVersion = '5.8.1'
+//    ruleSetFiles = files("...")
+    ignoreFailures = true
+}
+
+tasks.withType(Pmd) {
+    reports {
+        xml.enabled true
+        html.enabled true
+    }
+}
+
+
+// CPD
+
+task cpd {
+    doLast {
+        def cpdOutputDir = new File("${reportDir}/cpd")
+        cpdOutputDir.mkdirs()
+
+        ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
+
+        ant.cpd(minimumTokenCount: '5', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
+            fileset(dir: 'src') {
+                include(name: '**/*.java')
+            }
+        }
+    }
+}
+
+
+// JDepend
+jdepend {
+    jdependTest.enabled = false
+//   toolVersion = "2.9.1"
+    ignoreFailures = true
+}
+
+tasks.withType(JDepend) {
+    reports {
+        xml.enabled true
+        text.enabled false
+    }
+}
+
+
+
+// Test case
+
+test {
+    ignoreFailures = true
+}
