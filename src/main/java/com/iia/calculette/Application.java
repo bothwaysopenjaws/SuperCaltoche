@@ -2,7 +2,7 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
-import com.iia.ui.*;
+import com.iia.calculette.ui.*;
 /**
  * Mon application.
  * @version 1.0

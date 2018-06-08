@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright 2018.
  ******************************************************************************/
-package com.iia.ui;
+package com.iia.calculette.ui;
 
 /**
  * Interface class for UI to be implemented.

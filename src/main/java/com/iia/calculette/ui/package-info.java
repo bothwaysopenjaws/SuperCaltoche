@@ -5,4 +5,4 @@
  * @author Aurélien Le Pévédic
  * @version 1.0
  */
-package com.iia.ui;
+package com.iia.calculette.ui;

@@ -5,4 +5,4 @@
  * @author Aurélien Le Pévédic
  * @version 1.0
  */
-package com.iia.operation;
+package com.iia.calculette.operation;

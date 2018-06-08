@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright 2018.
  ******************************************************************************/
-package com.iia.operation;
+package com.iia.calculette.operation;
 
 /**
  * Interface class for every operations (+,*,-,/...etc) to be implemented.

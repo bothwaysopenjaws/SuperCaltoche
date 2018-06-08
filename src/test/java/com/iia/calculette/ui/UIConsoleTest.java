@@ -1,4 +1,4 @@
-package com.iia.ui;
+package com.iia.calculette.ui;
 
 import static org.junit.Assert.*;
 
@@ -8,7 +8,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.iia.ui.UIConsole;
+import com.iia.calculette.ui.UIConsole;
 
 public class UIConsoleTest {
 
