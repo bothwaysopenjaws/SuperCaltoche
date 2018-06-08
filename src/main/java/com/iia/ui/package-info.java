@@ -5,4 +5,4 @@
  * @author Aurélien Le Pévédic
  * @version 1.0
  */
-package com.tactfactory.ui;
+package com.iia.ui;

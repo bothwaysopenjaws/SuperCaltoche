@@ -1,4 +1,4 @@
-package com.tactfactory.ui;
+package com.iia.ui;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.iia.ui.UIConsole;
 
 public class UIConsoleTest {
 

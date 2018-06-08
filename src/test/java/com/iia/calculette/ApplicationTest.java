@@ -13,11 +13,13 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  ******************************************************************************/
-package com.tactfactory.calculette;
+package com.iia.calculette;
 
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
+
+import com.iia.calculette.Application;
 
 /**
  * Test class

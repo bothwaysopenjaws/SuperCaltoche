@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright 2018.
  ******************************************************************************/
-package com.tactfactory.operation;
+package com.iia.operation;
 
 /**
  * Interface class for every operations (+,*,-,/...etc) to be implemented.

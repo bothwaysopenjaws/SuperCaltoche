@@ -1,8 +1,8 @@
 /*******************************************************************************
  * Copyright 2018.
  ******************************************************************************/
-package com.tactfactory.calculette;
-import com.tactfactory.ui.*;
+package com.iia.calculette;
+import com.iia.ui.*;
 /**
  * Mon application.
  * @version 1.0

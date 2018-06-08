@@ -1,7 +1,7 @@
 /*******************************************************************************
  * Copyright 2018.
  ******************************************************************************/
-package com.tactfactory.ui;
+package com.iia.ui;
 
 import java.util.Scanner;
 
@@ -34,7 +34,7 @@ public class UIConsole implements InterfaceUI {
     }
     /**
      * Display the text in parameter.
-     * @param void content text displayed to user
+     * @param content text displayed to user
      */
     @Override
     public void display(String content) {
