@@ -11,6 +11,9 @@ package com.tactfactory.calculette;
  */
 public final class Application{        
 
+    /**
+     * Constructor of the entry point.
+     */
     public Application() {
         super();
     }
