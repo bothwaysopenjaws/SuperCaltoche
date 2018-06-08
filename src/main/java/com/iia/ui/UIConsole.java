@@ -10,13 +10,13 @@ import java.util.Scanner;
  * @author Aurélien Le Pévédic
  * @version 1.0
  */
-public class UIConsole implements InterfaceUI {
+public final class UIConsole implements InterfaceUI {
     
-    /* Scanner class, to grad text in console.*/
-    private Scanner scanner = new Scanner(System.in);
+    /** Scanner class, to grad text in console.*/
+    private final Scanner SCANNER = new Scanner(System.in);
     
-    /*Console, to be instanciated if null*/
-    private static final UIConsole console = new UIConsole();
+    /** Console, to be instanciated if null*/
+    private static final UIConsole CONSOLE = new UIConsole();
     
     /**
      * Private constructor.
@@ -30,14 +30,14 @@ public class UIConsole implements InterfaceUI {
      * @return UIConsole the singleton
      */
     public static UIConsole getUIConsole() {
-        return console;
+        return CONSOLE;
     }
     /**
      * Display the text in parameter.
      * @param content text displayed to user
      */
     @Override
-    public void display(String content) {
+    public final void display(String content) {
         System.out.println(content);
     }
 
@@ -47,7 +47,8 @@ public class UIConsole implements InterfaceUI {
      */
     @Override
     public String getContent() {
-        return scanner.nextLine().toString();
+        String contentReturn = SCANNER.nextLine().toString();
+        return contentReturn;
     }
 
 }

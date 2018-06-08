@@ -11,35 +11,39 @@ import com.iia.ui.*;
  */
 public final class Application{        
 
-    /*
+    /**
      * Instantiate userInterface singleton, to display and catch user input
      */
     private static InterfaceUI userInterface = UIConsole.getUIConsole();
     
-    /*
+    /**
      * Boolean set to true to begin loop in main program
      */
     private static boolean isRunning = true;
     
     /**
-     * Constructor of the entry point.
+     * Private constructor of application class.
      */
-    public Application() {
-        super();
-    }
+    private Application() {}
     /**
      * Entry-point of application.
      * @param args Argument from CLI.
      */
     public static void main(final String[] args) {
-        new Application();
         getWelcomeMessage();
         getMenu();
+        int numberVar;
         do {
-            String numberVar = userInterface.getContent();
-            switch (Integer.parseInt((numberVar))) {
+            numberVar = Integer.parseInt(userInterface.getContent());
+            switch (numberVar) {
             case 1:
                 isRunning = false;
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
                 break;
             default:
                 break;
