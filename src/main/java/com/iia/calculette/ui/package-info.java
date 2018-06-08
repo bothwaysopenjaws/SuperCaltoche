@@ -1,4 +1,8 @@
 /*******************************************************************************
- * Copyright 2018 AURELIEN.
+ * Copyright 2018.
  ******************************************************************************/
-package com.tactfactory.calculette;
+/**
+ * @author Aurélien Le Pévédic
+ * @version 1.0
+ */
+package com.iia.calculette.ui;
