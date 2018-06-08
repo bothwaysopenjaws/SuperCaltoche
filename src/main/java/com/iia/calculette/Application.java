@@ -11,14 +11,10 @@ import com.iia.calculette.ui.*;
  */
 public final class Application{        
 
-    /**
-     * Instantiate userInterface singleton, to display and catch user input
-     */
+    /** Instantiate userInterface singleton, to display and catch user input.*/
     private static InterfaceUI userInterface = UIConsole.getUIConsole();
     
-    /**
-     * Boolean set to true to begin loop in main program
-     */
+    /** Boolean set to true to begin loop in main program.*/
     private static boolean isRunning = true;
     
     /**
