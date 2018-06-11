@@ -2,6 +2,8 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
+import org.junit.experimental.theories.Theories;
+
 import com.iia.calculette.operation.OperationAdd;
 import com.iia.calculette.ui.*;
 /**
@@ -35,7 +37,6 @@ public final class Application{
         		numberVar = Integer.parseInt(userInterface.getContent());
         		} catch (Exception e) {
         			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
-        			userInterface.display("Veuillez réessayer.");
         			numberVar = -1;
 			}
         	
@@ -56,7 +57,8 @@ public final class Application{
                 	operationAdd.setSecondValue(secondValue);
                 	
                 	System.out.println("Résultat : " + operationAdd.operation());
-                	
+                	System.out.println("Veuillez appuyer sur une touche pour continuer");
+                	userInterface.getContent();
                     break;
                 case 2:
                     break;
@@ -68,6 +70,9 @@ public final class Application{
                     break;
                 }			
 			}
+            
+            userInterface.clear();
+            getMenu();
 
         }
         while(isRunning);
@@ -84,8 +89,7 @@ public final class Application{
             	value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
             	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
-            }
-            userInterface.display("Veuillez rééssayer");
+			}
         } 
         return value;
     }

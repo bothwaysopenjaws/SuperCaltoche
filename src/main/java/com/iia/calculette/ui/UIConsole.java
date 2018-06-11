@@ -47,6 +47,9 @@ public final class UIConsole implements InterfaceUI {
         return new Scanner(System.in, "UTF-8").nextLine().toString();
     }
 
+    /**
+     * Clear the console.
+     */
 	@Override
 	public void clear() {
 		//System.out.flush();  
