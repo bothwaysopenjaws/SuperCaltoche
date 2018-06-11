@@ -8,12 +8,23 @@ package com.iia.calculette.operation;
  * @author Aurélien Le Pévédic
  * @version 1.0
  */
-public interface Operation {
-    
+public interface Operation{
     /**
      * Interface operations.
      * @return double result
      */
     public double operation();
-
+    
+    /**
+     * First value of the calculation
+     * @param firstValue
+     */
+    public void setFirstValue(Double firstValue);
+    
+    /**
+     * Second value of the calculation
+     * @param secondValue
+     */
+    public void setSecondValue(Double secondValue);
+    
 }

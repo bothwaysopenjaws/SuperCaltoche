@@ -16,7 +16,7 @@ public class UIConsoleTest {
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
     
     @Test
-    public void displayTest() {
+    public void testDisplay() {
         UIConsole testUI = UIConsole.getUIConsole();
         //testUI.display("test");
         System.out.print("test");
@@ -24,7 +24,7 @@ public class UIConsoleTest {
     }
     
     @Test
-    public void getContentTest() {
+    public void testGetContent() {
 
     }
     

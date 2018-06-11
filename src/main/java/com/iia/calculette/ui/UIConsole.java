@@ -12,8 +12,6 @@ import java.util.Scanner;
  */
 public final class UIConsole implements InterfaceUI {
     
-    /** Scanner class, to grad text in console.*/
-    private static final Scanner SCANNER = new Scanner(System.in);
     
     /** Console, to be instanciated if null.*/
     private static final UIConsole CONSOLE = new UIConsole();
@@ -47,7 +45,12 @@ public final class UIConsole implements InterfaceUI {
      */
     @Override
     public String getContent() {
-        return SCANNER.nextLine().toString();
+        return new Scanner(System.in).nextLine().toString();
     }
+
+	@Override
+	public void clear() {
+		    //System.out.flush();  
+	}
 
 }

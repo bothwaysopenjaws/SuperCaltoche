@@ -21,4 +21,6 @@ public interface InterfaceUI {
      * @return String the content read within the console
      */
     public String getContent();
+    
+    public void clear();
 }
