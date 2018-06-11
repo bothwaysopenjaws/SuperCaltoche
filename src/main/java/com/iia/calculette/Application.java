@@ -18,14 +18,14 @@ import com.iia.calculette.ui.*;
  * @author Aurélien Le Pévédic
  *
  */
-public final class Application{        
+public final class Application{
 
     /** Instantiate userInterface singleton, to display and catch user input.*/
     private static InterfaceUI userInterface = UIConsole.getUIConsole();
-    
+
     /** Boolean set to true to begin loop in main program.*/
     private static boolean isRunning = true;
-    
+
     /**
      * Private constructor of application class.
      */
@@ -41,16 +41,16 @@ public final class Application{
         do {
             getMenu();
             int numberVar = -1 ;
-        	try {
-        		numberVar = Integer.parseInt(userInterface.getContent());
+            try {
+                numberVar = Integer.parseInt(userInterface.getContent());
         		} catch (Exception e) {
         			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
         			numberVar = -1;
-			}
-        	
+        		}
+
         	Operation operation = null;
         	OperationDoubleValues operationDoubleValues = null;
-        	
+
             if (numberVar >= 0 && numberVar <= 5) {
                 switch (numberVar) {
                 case 0:
@@ -126,15 +126,15 @@ public final class Application{
                     break;
                 default:
                     break;
-                }			
-			}
-            
+                }
+            }
+
             userInterface.clear();
 
         }
         while(isRunning);
     }
-    
+
     /**
      * Method calling interface to get a Double value.
      * @return Double value
@@ -146,11 +146,11 @@ public final class Application{
             	value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
             	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
-			}
-        } 
+            }
+        }
         return value;
     }
-    
+
     /**
      * Display welcoming message.
      */
@@ -159,7 +159,7 @@ public final class Application{
         userInterface.display("Bienvenue sur super caltoche!");
         userInterface.display("-------------------------------------------------");
     }
-    
+
     /**
      * Display menu message.
      */
