@@ -16,13 +16,13 @@ public interface Operation{
     public double operation();
     
     /**
-     * First value of the calculation
+     * First value of the calculation.
      * @param firstValue
      */
     public void setFirstValue(Double firstValue);
     
     /**
-     * Second value of the calculation
+     * Second value of the calculation.
      * @param secondValue
      */
     public void setSecondValue(Double secondValue);

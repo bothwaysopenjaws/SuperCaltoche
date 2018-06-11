@@ -108,5 +108,5 @@ public final class Application{
         userInterface.display("1 - Addition :");
         //userInterface.display("2 - Soustraction :");
         userInterface.display("0 - Quitter");
-    }   
+    }
 }

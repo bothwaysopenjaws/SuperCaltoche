@@ -22,7 +22,6 @@ public class OperationAdd implements Operation {
 	 */
 	@Override
 	public double operation() {
-		// TODO Auto-generated method stub
 		return this.firstValue + this.secondValue;
 	}
 
@@ -39,7 +38,6 @@ public class OperationAdd implements Operation {
 	 */
 	@Override
 	public void setSecondValue(Double secondValue) {
-		// TODO Auto-generated method stub
 		this.secondValue = secondValue;
 	}
 	

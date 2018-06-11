@@ -12,7 +12,6 @@ import java.util.Scanner;
  */
 public final class UIConsole implements InterfaceUI {
     
-    
     /** Console, to be instanciated if null.*/
     private static final UIConsole CONSOLE = new UIConsole();
     
@@ -45,12 +44,12 @@ public final class UIConsole implements InterfaceUI {
      */
     @Override
     public String getContent() {
-        return new Scanner(System.in).nextLine().toString();
+        return new Scanner(System.in, "UTF-8").nextLine().toString();
     }
 
 	@Override
 	public void clear() {
-		    //System.out.flush();  
+		//System.out.flush();  
 	}
 
 }
