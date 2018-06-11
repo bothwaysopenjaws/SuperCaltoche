@@ -6,7 +6,7 @@ package com.iia.calculette.operation;
  *
  */
 public class OperationSub implements OperationDoubleValues {
-	
+
 	/**
 	 * Left value of the operation.
 	 */

@@ -9,7 +9,7 @@ package com.iia.calculette.operation;
  *
  */
 public interface OperationDoubleValues extends Operation {
-	/**
+    /**
      * Second value of the calculation.
      * @param secondValue
      */

@@ -6,8 +6,8 @@ package com.iia.calculette.operation;
  *
  */
 public class OperationCos implements Operation {
-    
-	/**
+
+    /**
 	 * Left value of the operation.
 	 */
 	private Double firstValue;
