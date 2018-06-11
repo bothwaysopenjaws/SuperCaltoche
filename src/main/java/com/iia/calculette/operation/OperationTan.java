@@ -1,6 +1,4 @@
-package com.iia.calculette;
-
-import com.iia.calculette.operation.Operation;
+package com.iia.calculette.operation;
 
 /**
  * 

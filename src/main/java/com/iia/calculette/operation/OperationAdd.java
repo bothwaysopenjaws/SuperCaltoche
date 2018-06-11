@@ -5,7 +5,7 @@ package com.iia.calculette.operation;
  * @author estephant
  *
  */
-public class OperationAdd implements Operation {
+public class OperationAdd implements OperationDoubleValues {
 	
 	/**
 	 * Left value of the operation.

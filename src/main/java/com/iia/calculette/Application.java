@@ -2,12 +2,15 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
+import com.iia.calculette.operation.Operation;
 import com.iia.calculette.operation.OperationAdd;
 import com.iia.calculette.operation.OperationCos;
 import com.iia.calculette.operation.OperationDivide;
+import com.iia.calculette.operation.OperationDoubleValues;
 import com.iia.calculette.operation.OperationMultiply;
 import com.iia.calculette.operation.OperationSin;
 import com.iia.calculette.operation.OperationSub;
+import com.iia.calculette.operation.OperationTan;
 import com.iia.calculette.ui.*;
 /**
  * Mon application.
@@ -45,78 +48,81 @@ public final class Application{
         			numberVar = -1;
 			}
         	
+        	Operation operation = null;
+        	OperationDoubleValues operationDoubleValues = null;
+        	
             if (numberVar >= 0 && numberVar <= 5) {
                 switch (numberVar) {
                 case 0:
                     isRunning = false;
                     break;
                 case 1:
-                	OperationAdd operationAdd = new OperationAdd();
+                	operationDoubleValues = new OperationAdd();
                 	userInterface.clear();
                 	userInterface.display("Inserer la première valeur");
                 	firstValue = getDoubleInput();
-                	operationAdd.setFirstValue(firstValue);
+                	operationDoubleValues.setFirstValue(firstValue);
                 	userInterface.display("Inserer la seconde valeur");
                 	secondValue = getDoubleInput();
-                	operationAdd.setSecondValue(secondValue);
-                	System.out.println("Résultat : " + operationAdd.operation());
+                	operationDoubleValues.setSecondValue(secondValue);
+                	System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 2:
-                    OperationSub operationSub = new OperationSub();
+                	operationDoubleValues = new OperationSub();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationSub.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationSub.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationSub.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 3:
-                    OperationMultiply operationMulti = new OperationMultiply();
+                	operationDoubleValues = new OperationMultiply();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationMulti.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationMulti.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationMulti.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 4:
-                    OperationDivide operationDivide = new OperationDivide();
+                	operationDoubleValues = new OperationDivide();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationDivide.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationDivide.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationDivide.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 5:
-                    OperationSin operationSin = new OperationSin();
+                	operation = new OperationSin();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
-                    operationSin.setFirstValue(firstValue);
-                    System.out.println("Résultat : " + operationSin.operation());
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
                     break;
                 case 6:
-                	OperationCos operationCos = new OperationCos();
+                	operation = new OperationCos();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
-                    operationCos.setFirstValue(firstValue);
-                    System.out.println("Résultat : " + operationCos.operation());
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
                     break;
                 case 7:
-                	OperationTan operationTan = new OperationTan();
+                	operation = new OperationTan();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
-                    operationTan.setFirstValue(firstValue);
-                    System.out.println("Résultat : " + operationTan.operation());
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
                     break;
                 default:
                     break;
