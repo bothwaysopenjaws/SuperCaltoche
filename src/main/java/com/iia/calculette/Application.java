@@ -2,9 +2,10 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
-import org.junit.experimental.theories.Theories;
-
 import com.iia.calculette.operation.OperationAdd;
+import com.iia.calculette.operation.OperationDivide;
+import com.iia.calculette.operation.OperationMultiply;
+import com.iia.calculette.operation.OperationSub;
 import com.iia.calculette.ui.*;
 /**
  * Mon application.
@@ -30,9 +31,11 @@ public final class Application{
      */
     public static void main(final String[] args) {
         getWelcomeMessage();
-        getMenu();
-        int numberVar = -1 ;
+        Double firstValue;
+        Double secondValue;
         do {
+            getMenu();
+            int numberVar = -1 ;
         	try {
         		numberVar = Integer.parseInt(userInterface.getContent());
         		} catch (Exception e) {
@@ -40,7 +43,7 @@ public final class Application{
         			numberVar = -1;
 			}
         	
-            if (numberVar >= 0 && numberVar <= 1) {
+            if (numberVar >= 0 && numberVar <= 5) {
                 switch (numberVar) {
                 case 0:
                     isRunning = false;
@@ -49,22 +52,45 @@ public final class Application{
                 	OperationAdd operationAdd = new OperationAdd();
                 	userInterface.clear();
                 	userInterface.display("Inserer la première valeur");
-                	Double firstValue = getDoubleInput();
+                	firstValue = getDoubleInput();
                 	operationAdd.setFirstValue(firstValue);
-
                 	userInterface.display("Inserer la seconde valeur");
-                	Double secondValue = getDoubleInput();
+                	secondValue = getDoubleInput();
                 	operationAdd.setSecondValue(secondValue);
-                	
                 	System.out.println("Résultat : " + operationAdd.operation());
-                	System.out.println("Veuillez appuyer sur une touche pour continuer");
-                	userInterface.getContent();
                     break;
                 case 2:
+                    OperationSub operationSub = new OperationSub();
+                    userInterface.clear();
+                    userInterface.display("Inserer la première valeur");
+                    firstValue = getDoubleInput();
+                    operationSub.setFirstValue(firstValue);
+                    userInterface.display("Inserer la seconde valeur");
+                    secondValue = getDoubleInput();
+                    operationSub.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationSub.operation());
                     break;
                 case 3:
+                    OperationMultiply operationMulti = new OperationMultiply();
+                    userInterface.clear();
+                    userInterface.display("Inserer la première valeur");
+                    firstValue = getDoubleInput();
+                    operationMulti.setFirstValue(firstValue);
+                    userInterface.display("Inserer la seconde valeur");
+                    secondValue = getDoubleInput();
+                    operationMulti.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationMulti.operation());
                     break;
                 case 4:
+                    OperationDivide operationDivide = new OperationDivide();
+                    userInterface.clear();
+                    userInterface.display("Inserer la première valeur");
+                    firstValue = getDoubleInput();
+                    operationDivide.setFirstValue(firstValue);
+                    userInterface.display("Inserer la seconde valeur");
+                    secondValue = getDoubleInput();
+                    operationDivide.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDivide.operation());
                     break;
                 default:
                     break;
@@ -72,7 +98,6 @@ public final class Application{
 			}
             
             userInterface.clear();
-            getMenu();
 
         }
         while(isRunning);
@@ -110,7 +135,9 @@ public final class Application{
         userInterface.display("-------------------------------------------------");
         userInterface.display("Menu des choix :");
         userInterface.display("1 - Addition :");
-        //userInterface.display("2 - Soustraction :");
+        userInterface.display("2 - Soustraction :");
+        userInterface.display("3 - Multiplication :");
+        userInterface.display("4 - Division :");
         userInterface.display("0 - Quitter");
     }
 }
