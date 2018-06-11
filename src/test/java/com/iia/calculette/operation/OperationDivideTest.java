@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  * Test class for operationAdd
- * @author estephant
+ * @author alepevedic
  *
  */
 public class OperationDivideTest {
@@ -37,7 +37,7 @@ public class OperationDivideTest {
 	
 	
 	/**
-	 * Test the assignment of the second value.
+	 * Test the operation Divide.
 	 */
 	@Test
 	public void testOperation() {

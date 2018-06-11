@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<BugCollection version="3.0.1" sequence="0" timestamp="1528709729185" analysisTimestamp="1528709729220" release="">
+  <Project projectName="">
+    <Jar>C:\Users\julie\eclipse-workspace\SuperCaltoche\build\classes\java\main</Jar>
+    <AuxClasspathEntry>C:\Users\julie\.gradle\caches\modules-2\files-2.1\joda-time\joda-time\2.10\f66c8125d1057ffce6c4e29e624cac863e110e2b\joda-time-2.10.jar</AuxClasspathEntry>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\Application.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\operation\Operation.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\operation\package-info.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\package-info.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\ui\InterfaceUI.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\ui\package-info.java</SrcDir>
+    <SrcDir>C:\Users\julie\eclipse-workspace\SuperCaltoche\src\main\java\com\iia\calculette\ui\UIConsole.java</SrcDir>
+  </Project>
+  <BugInstance type="DM_DEFAULT_ENCODING" priority="1" rank="19" abbrev="Dm" category="I18N">
+    <Class classname="com.iia.calculette.ui.UIConsole">
+      <SourceLine classname="com.iia.calculette.ui.UIConsole" start="16" end="50" sourcefile="UIConsole.java" sourcepath="com/iia/calculette/ui/UIConsole.java"/>
+    </Class>
+    <Method classname="com.iia.calculette.ui.UIConsole" name="&lt;clinit&gt;" signature="()V" isStatic="true">
+      <SourceLine classname="com.iia.calculette.ui.UIConsole" start="16" end="19" startBytecode="0" endBytecode="51" sourcefile="UIConsole.java" sourcepath="com/iia/calculette/ui/UIConsole.java"/>
+    </Method>
+    <Method classname="java.util.Scanner" name="&lt;init&gt;" signature="(Ljava/io/InputStream;)V" isStatic="false" role="METHOD_CALLED">
+      <SourceLine classname="java.util.Scanner" start="563" end="564" startBytecode="0" endBytecode="43" sourcefile="Scanner.java" sourcepath="java/util/Scanner.java"/>
+    </Method>
+    <SourceLine classname="com.iia.calculette.ui.UIConsole" start="16" end="16" startBytecode="7" endBytecode="7" sourcefile="UIConsole.java" sourcepath="com/iia/calculette/ui/UIConsole.java"/>
+  </BugInstance>
+  <Errors errors="0" missingClasses="0"></Errors>
+  <FindBugsSummary timestamp="Mon, 11 Jun 2018 11:35:29 +0200" total_classes="4" referenced_classes="17" total_bugs="1" total_size="51" num_packages="3" java_version="1.8.0_172" vm_version="25.172-b11" cpu_seconds="5.64" clock_seconds="1.27" peak_mbytes="118.36" alloc_mbytes="1796.00" gc_seconds="0.02" priority_1="1">
+    <PackageStats package="com.iia.calculette" total_bugs="0" total_types="1" total_size="30">
+      <ClassStats class="com.iia.calculette.Application" sourceFile="Application.java" interface="false" size="30" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.iia.calculette.operation" total_bugs="0" total_types="1" total_size="2">
+      <ClassStats class="com.iia.calculette.operation.Operation" sourceFile="Operation.java" interface="true" size="2" bugs="0"/>
+    </PackageStats>
+    <PackageStats package="com.iia.calculette.ui" total_bugs="1" total_types="2" total_size="19" priority_1="1">
+      <ClassStats class="com.iia.calculette.ui.InterfaceUI" sourceFile="InterfaceUI.java" interface="true" size="3" bugs="0"/>
+      <ClassStats class="com.iia.calculette.ui.UIConsole" sourceFile="UIConsole.java" interface="false" size="16" bugs="1" priority_1="1"/>
+    </PackageStats>
+    <FindBugsProfile>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassDataAnalysisEngine" totalMilliseconds="215" invocations="359" avgMicrosecondsPerInvocation="599" maxMicrosecondsPerInvocation="1754" standardDeviationMircosecondsPerInvocation="290"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.ClassInfoAnalysisEngine" totalMilliseconds="202" invocations="357" avgMicrosecondsPerInvocation="565" maxMicrosecondsPerInvocation="15166" standardDeviationMircosecondsPerInvocation="1441"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FieldItemSummary" totalMilliseconds="61" invocations="17" avgMicrosecondsPerInvocation="3628" maxMicrosecondsPerInvocation="25639" standardDeviationMircosecondsPerInvocation="6396"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FindNoSideEffectMethods" totalMilliseconds="41" invocations="17" avgMicrosecondsPerInvocation="2463" maxMicrosecondsPerInvocation="19164" standardDeviationMircosecondsPerInvocation="4589"/>
+      <ClassProfile name="edu.umd.cs.findbugs.OpcodeStack$JumpInfoFactory" totalMilliseconds="40" invocations="79" avgMicrosecondsPerInvocation="510" maxMicrosecondsPerInvocation="3798" standardDeviationMircosecondsPerInvocation="686"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.MethodGenFactory" totalMilliseconds="37" invocations="13" avgMicrosecondsPerInvocation="2910" maxMicrosecondsPerInvocation="35177" standardDeviationMircosecondsPerInvocation="9320"/>
+      <ClassProfile name="edu.umd.cs.findbugs.util.TopologicalSort" totalMilliseconds="32" invocations="325" avgMicrosecondsPerInvocation="99" maxMicrosecondsPerInvocation="1685" standardDeviationMircosecondsPerInvocation="184"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.JavaClassAnalysisEngine" totalMilliseconds="28" invocations="37" avgMicrosecondsPerInvocation="759" maxMicrosecondsPerInvocation="14812" standardDeviationMircosecondsPerInvocation="2449"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.NoteDirectlyRelevantTypeQualifiers" totalMilliseconds="17" invocations="17" avgMicrosecondsPerInvocation="1012" maxMicrosecondsPerInvocation="7056" standardDeviationMircosecondsPerInvocation="1700"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.OverridingEqualsNotSymmetrical" totalMilliseconds="17" invocations="17" avgMicrosecondsPerInvocation="1008" maxMicrosecondsPerInvocation="9707" standardDeviationMircosecondsPerInvocation="2262"/>
+      <ClassProfile name="edu.umd.cs.findbugs.detect.FunctionsThatMightBeMistakenForProcedures" totalMilliseconds="16" invocations="17" avgMicrosecondsPerInvocation="968" maxMicrosecondsPerInvocation="5415" standardDeviationMircosecondsPerInvocation="1476"/>
+      <ClassProfile name="edu.umd.cs.findbugs.classfile.engine.bcel.IsNullValueDataflowFactory" totalMilliseconds="14" invocations="10" avgMicrosecondsPerInvocation="1496" maxMicrosecondsPerInvocation="7038" standardDeviationMircosecondsPerInvocation="2062"/>
+    </FindBugsProfile>
+  </FindBugsSummary>
+  <ClassFeatures></ClassFeatures>
+  <History></History>
+</BugCollection>

@@ -36,7 +36,6 @@ public class OperationAdd implements Operation {
 	/**
 	 * Assign the second value of the operation.
 	 */
-	@Override
 	public void setSecondValue(Double secondValue) {
 		this.secondValue = secondValue;
 	}

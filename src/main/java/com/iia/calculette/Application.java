@@ -3,8 +3,10 @@
  ******************************************************************************/
 package com.iia.calculette;
 import com.iia.calculette.operation.OperationAdd;
+import com.iia.calculette.operation.OperationCos;
 import com.iia.calculette.operation.OperationDivide;
 import com.iia.calculette.operation.OperationMultiply;
+import com.iia.calculette.operation.OperationSin;
 import com.iia.calculette.operation.OperationSub;
 import com.iia.calculette.ui.*;
 /**
@@ -92,6 +94,30 @@ public final class Application{
                     operationDivide.setSecondValue(secondValue);
                     System.out.println("Résultat : " + operationDivide.operation());
                     break;
+                case 5:
+                    OperationSin operationSin = new OperationSin();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operationSin.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operationSin.operation());
+                    break;
+                case 6:
+                	OperationCos operationCos = new OperationCos();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operationCos.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operationCos.operation());
+                    break;
+                case 7:
+                	OperationTan operationTan = new OperationTan();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operationTan.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operationTan.operation());
+                    break;
                 default:
                     break;
                 }			
@@ -138,6 +164,9 @@ public final class Application{
         userInterface.display("2 - Soustraction :");
         userInterface.display("3 - Multiplication :");
         userInterface.display("4 - Division :");
+        userInterface.display("5 - Sin :");
+        userInterface.display("6 - Cos :");
+//        userInterface.display("7 - Tan :");
         userInterface.display("0 - Quitter");
     }
 }
