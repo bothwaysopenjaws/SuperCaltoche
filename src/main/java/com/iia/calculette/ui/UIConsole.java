@@ -44,7 +44,7 @@ public final class UIConsole implements InterfaceUI {
      */
     @Override
     public String getContent() {
-        return new Scanner(System.in, "UTF-8").nextLine().toString();
+        return new Scanner(System.in,"UTF-8").nextLine().toString();
     }
 
     /**

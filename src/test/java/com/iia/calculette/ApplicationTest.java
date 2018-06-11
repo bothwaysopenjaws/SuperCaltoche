@@ -15,11 +15,7 @@
  ******************************************************************************/
 package com.iia.calculette;
 
-import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
-
-import com.iia.calculette.Application;
 
 /**
  * Test class.
