@@ -6,7 +6,6 @@ package com.iia.calculette.operation;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
-import java.lang.Math;
 
 /**
  * Test class for operationSin

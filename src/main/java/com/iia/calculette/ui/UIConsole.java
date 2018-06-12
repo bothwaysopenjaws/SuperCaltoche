@@ -42,6 +42,7 @@ public final class UIConsole implements InterfaceUI {
      * Grab context from the console.
      * @return String the content read within the console
      */
+    @SuppressWarnings("resource")
     @Override
     public String getContent() {
         return new Scanner(System.in,"UTF-8").nextLine().toString();
