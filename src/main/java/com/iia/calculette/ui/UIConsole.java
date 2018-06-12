@@ -5,6 +5,11 @@ package com.iia.calculette.ui;
 
 import java.util.Scanner;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import com.iia.calculette.Application;
+
 /**
  * Implementation of interface, for console UI.
  * @author Aurélien Le Pévédic
@@ -14,6 +19,11 @@ public final class UIConsole implements InterfaceUI {
 
     /** Console, to be instanciated if null.*/
     private static final UIConsole CONSOLE = new UIConsole();
+
+    /**
+     * Log4j logger.
+     */
+    final static Log logger = LogFactory.getLog(UIConsole.class);
 
     /**
      * Private constructor.
@@ -27,6 +37,7 @@ public final class UIConsole implements InterfaceUI {
      * @return UIConsole the singleton
      */
     public static UIConsole getUIConsole() {
+        logger.info("UI console OK.");
         return CONSOLE;
     }
     /**
@@ -55,5 +66,4 @@ public final class UIConsole implements InterfaceUI {
     public void clear() {
         //System.out.flush();
     }
-
 }
