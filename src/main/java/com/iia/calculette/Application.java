@@ -2,6 +2,9 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.iia.calculette.operation.OperationAdd;
 import com.iia.calculette.operation.OperationDivide;
 import com.iia.calculette.operation.OperationMultiply;
@@ -13,18 +16,24 @@ import com.iia.calculette.ui.*;
  * @author Aurélien Le Pévédic
  *
  */
-public final class Application{        
+public final class Application{
 
     /** Instantiate userInterface singleton, to display and catch user input.*/
     private static InterfaceUI userInterface = UIConsole.getUIConsole();
-    
+
     /** Boolean set to true to begin loop in main program.*/
     private static boolean isRunning = true;
-    
+
+    /**
+     * Log4j logger.
+     */
+    final static Log logger = LogFactory.getLog(Application.class);
+
     /**
      * Private constructor of application class.
      */
     private Application() {}
+    
     /**
      * Entry-point of application.
      * @param args Argument from CLI.
@@ -36,14 +45,19 @@ public final class Application{
         do {
             getMenu();
             int numberVar = -1 ;
-        	try {
-        		numberVar = Integer.parseInt(userInterface.getContent());
-        		} catch (Exception e) {
-        			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
-        			numberVar = -1;
-			}
-        	
+            try {
+                numberVar = Integer.parseInt(userInterface.getContent());
+                logger.info("menu choix :" + numberVar);
+            } catch (Exception e) {
+
+                logger.error("Erreur lors du parsing de numbVar (choix du menu) " + System.lineSeparator() + e.getMessage());
+                userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
+                numberVar = -1;
+            }
+
             if (numberVar >= 0 && numberVar <= 5) {
+                logger.info("Choix du menu correct : "+ numberVar);
+
                 switch (numberVar) {
                 case 0:
                     isRunning = false;
@@ -94,15 +108,19 @@ public final class Application{
                     break;
                 default:
                     break;
-                }			
-			}
-            
+                }
+            } else
+            {
+                logger.info("Choix du menu incorrect : "+ numberVar);
+            }
+
             userInterface.clear();
 
         }
         while(isRunning);
     }
-    
+
+
     /**
      * Method calling interface to get a Double value.
      * @return Double value
@@ -111,14 +129,15 @@ public final class Application{
         Double value = null;
         while (value == null) {
             try {
-            	value = Double.parseDouble(userInterface.getContent());
+                value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
-            	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
-			}
-        } 
+                logger.error("Erreur lors du parsing des doubles (choix du menu) " + System.lineSeparator() + e.getMessage());
+                userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
+            }
+        }
         return value;
     }
-    
+
     /**
      * Display welcoming message.
      */
@@ -127,7 +146,7 @@ public final class Application{
         userInterface.display("Bienvenue sur super caltoche!");
         userInterface.display("-------------------------------------------------");
     }
-    
+
     /**
      * Display menu message.
      */
