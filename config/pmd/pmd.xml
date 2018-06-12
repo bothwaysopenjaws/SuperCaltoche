@@ -99,7 +99,6 @@
     <rule ref="rulesets/java/comments.xml/CommentContent"></rule>   <!-- Use for offending langage -->
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html -->
-    <rule ref="rulesets/java/controversial.xml/UnnecessaryConstructor"></rule>
     <rule ref="rulesets/java/controversial.xml/NullAssignment"></rule>
     <rule ref="rulesets/java/controversial.xml/AssignmentInOperand">
         <properties>
@@ -114,11 +113,6 @@
     <rule ref="rulesets/java/controversial.xml/CallSuperInConstructor"></rule>
     <rule ref="rulesets/java/controversial.xml/UnnecessaryParentheses"></rule>
     <rule ref="rulesets/java/controversial.xml/DefaultPackage"></rule>
-    <rule ref="rulesets/java/controversial.xml/DataflowAnomalyAnalysis">
-        <properties>
-            <property name="maxViolations" value="0"/>      <!-- Maximum number of anomalies per class -->
-        </properties>
-    </rule>
     <rule ref="rulesets/java/controversial.xml/AvoidFinalLocalVariable"></rule>
     <rule ref="rulesets/java/controversial.xml/AvoidUsingShortType"></rule>
     <rule ref="rulesets/java/controversial.xml/AvoidUsingVolatile"></rule>
