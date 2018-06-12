@@ -1,4 +1,6 @@
 package com.iia.calculette.operation;
+//import org.apache.commons.logging.Log;
+//import org.apache.commons.logging.LogFactory;
 
 /**
  * Implementation of the operation. Allow to add a value to an other one.
@@ -6,22 +8,24 @@ package com.iia.calculette.operation;
  *
  */
 public class OperationAdd implements Operation {
-	
+	//final static Log logger = LogFactory.getLog(Sample.class);
+
 	/**
 	 * Left value of the operation.
 	 */
 	private Double firstValue;
-	
+
 	/**
 	 * Right value of the operation.
 	 */
 	private Double secondValue;
-	
+
 	/**
 	 * Constructor of the operation.
 	 */
 	@Override
 	public double operation() {
+		//logger.debug("operation Add return : " + this.firstValue + this.secondValue);
 		return this.firstValue + this.secondValue;
 	}
 
@@ -40,7 +44,7 @@ public class OperationAdd implements Operation {
 	public void setSecondValue(Double secondValue) {
 		this.secondValue = secondValue;
 	}
-	
+
 	/**
 	 * Get the first value of the operation.
 	 * @return Double FirstValue
