@@ -99,7 +99,6 @@
     <rule ref="rulesets/java/comments.xml/CommentContent"></rule>   <!-- Use for offending langage -->
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/controversial.html -->
-    <rule ref="rulesets/java/controversial.xml/UnnecessaryConstructor"></rule>
     <rule ref="rulesets/java/controversial.xml/NullAssignment"></rule>
     <rule ref="rulesets/java/controversial.xml/AssignmentInOperand">
         <properties>
@@ -173,7 +172,6 @@
     <!--rule ref="rulesets/java/design.xml/UnnecessaryLocalBeforeReturn"></rule-->
     <rule ref="rulesets/java/design.xml/NonThreadSafeSingleton"></rule>
     <rule ref="rulesets/java/design.xml/UncommentedEmptyMethod"></rule>
-    <rule ref="rulesets/java/design.xml/UncommentedEmptyConstructor"></rule>
     <rule ref="rulesets/java/design.xml/AvoidConstantsInterface"></rule>
     <rule ref="rulesets/java/design.xml/PreserveStackTrace"></rule>
     <rule ref="rulesets/java/design.xml/UseCollectionIsEmpty"></rule>

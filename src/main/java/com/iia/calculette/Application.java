@@ -123,8 +123,8 @@ public final class Application{
     protected static String computeOperation(String expressionString) {
         String returnValue = expressionString;
         Expression calcul = new Expression(expressionString);
-        userInterface.display(" = "+ calcul.calculate());
-        returnValue = returnValue + " = "+ calcul.calculate();
+        userInterface.display(" = " + calcul.calculate());
+        returnValue = returnValue + " = " + calcul.calculate();
         return returnValue;
     }
 }

@@ -5,8 +5,8 @@ package com.iia.calculette.ui;
 
 import java.util.Scanner;
 
-import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
 
 /**
  * Implementation of interface, for console UI.
