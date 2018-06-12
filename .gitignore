@@ -1,0 +1,13 @@
+*.apk*.ap_bin/
+gen/
+local.properties
+.classpath
+.projectproguard/
+*.iml
+*.ipr
+*.iws
+.idea/
+.gradletasknamecache
+.gradle/
+build/
+bin/

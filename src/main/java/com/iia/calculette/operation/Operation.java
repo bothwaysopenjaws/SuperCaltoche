@@ -21,10 +21,4 @@ public interface Operation{
      */
     public void setFirstValue(Double firstValue);
     
-    /**
-     * Second value of the calculation.
-     * @param secondValue
-     */
-    public void setSecondValue(Double secondValue);
-    
 }

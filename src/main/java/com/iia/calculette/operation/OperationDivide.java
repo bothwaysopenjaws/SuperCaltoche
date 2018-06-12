@@ -5,55 +5,54 @@ package com.iia.calculette.operation;
  * @author estephant
  *
  */
-public class OperationDivide implements Operation {
-	
-	/**
-	 * Left value of the operation.
-	 */
-	private Double firstValue;
-	
-	/**
-	 * Right value of the operation.
-	 */
-	private Double secondValue;
-	
-	/**
-	 * Constructor of the operation.
-	 */
-	@Override
-	public double operation() {
-		return this.firstValue / this.secondValue;
-	}
+public class OperationDivide implements OperationDoubleValues {
 
-	/**
-	 * Assign the first value of the operation.
-	 */
-	@Override
-	public void setFirstValue(Double firstValue) {
-		this.firstValue = firstValue;
-	}
+    /**
+     * Left value of the operation.
+     */
+    private Double firstValue;
 
-	/**
-	 * Assign the second value of the operation.
-	 */
-	@Override
-	public void setSecondValue(Double secondValue) {
-		this.secondValue = secondValue;
-	}
-	
-	/**
-	 * Get the first value of the operation.
-	 * @return Double FirstValue
-	 */
-	public Double getFirstValue() {
-		return firstValue;
-	}
+    /**
+     * Right value of the operation.
+     */
+    private Double secondValue;
 
-	/**
-	 * Get the second value of the operation.
-	 * @return Double secondValue
-	 */
-	public Double getSecondValue() {
-		return secondValue;
-	}
+    /**
+     * Constructor of the operation.
+     */
+    @Override
+    public double operation() {
+        return this.firstValue / this.secondValue;
+    }
+
+    /**
+     * Assign the first value of the operation.
+     */
+    @Override
+    public void setFirstValue(Double firstValue) {
+        this.firstValue = firstValue;
+    }
+
+    /**
+     * Assign the second value of the operation.
+     */
+    public void setSecondValue(Double secondValue) {
+        this.secondValue = secondValue;
+    }
+
+    /**
+     * Get the first value of the operation.
+     * @return Double FirstValue
+     */
+    public Double getFirstValue() {
+        return firstValue;
+    }
+
+    /**
+     * Get the second value of the operation.
+     * @return Double secondValue
+     */
+    public Double getSecondValue() {
+        return secondValue;
+    }
 }
