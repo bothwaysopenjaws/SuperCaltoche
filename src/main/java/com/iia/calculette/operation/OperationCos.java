@@ -17,14 +17,15 @@ public class OperationCos implements Operation {
      */
     @Override
     public double operation() {
-        return Math.cos(this.firstValue);
+        double returnValue = Math.cos(this.firstValue);
+        return returnValue;
     }
 
     /**
      * Assign the first value of the operation.
      */
     @Override
-    public void setFirstValue(Double firstValue) {
+    public void setFirstValue(final Double firstValue) {
         this.firstValue = firstValue;
     }
 
@@ -35,5 +36,13 @@ public class OperationCos implements Operation {
     public Double getFirstValue() {
         return firstValue;
     }
+
+    /**
+     * Class constructor.
+     */
+    public OperationCos() {
+        super();
+    }
+
 
 }

@@ -22,5 +22,8 @@ public interface InterfaceUI {
      */
     public String getContent();
 
+    /**
+     * To clear the console.
+     */
     public void clear();
 }

@@ -29,14 +29,14 @@ public class OperationAdd implements OperationDoubleValues {
      * Assign the first value of the operation.
      */
     @Override
-    public void setFirstValue(Double firstValue) {
+    public void setFirstValue(final Double firstValue) {
         this.firstValue = firstValue;
     }
 
     /**
      * Assign the second value of the operation.
      */
-    public void setSecondValue(Double secondValue) {
+    public void setSecondValue(final Double secondValue) {
         this.secondValue = secondValue;
     }
 
@@ -54,5 +54,12 @@ public class OperationAdd implements OperationDoubleValues {
      */
     public Double getSecondValue() {
         return secondValue;
+    }
+
+    /**
+     * Class constructor.
+     */
+    public OperationAdd() {
+        super();
     }
 }
