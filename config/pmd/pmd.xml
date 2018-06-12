@@ -236,7 +236,6 @@
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-java.html -->
     <rule ref="rulesets/java/logging-java.xml/MoreThanOneLogger"></rule>
     <rule ref="rulesets/java/logging-java.xml/LoggerIsNotStaticFinal"></rule>
-    <rule ref="rulesets/java/logging-java.xml/SystemPrintln"></rule>
     <rule ref="rulesets/java/logging-java.xml/AvoidPrintStackTrace"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/migrating.html -->
