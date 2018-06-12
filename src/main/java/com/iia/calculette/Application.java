@@ -38,7 +38,7 @@ public final class Application{
     /**
      * Private constructor of application class.
      */
-    private Application() {
+    public Application() {
     }
 
     /**
@@ -104,28 +104,6 @@ public final class Application{
         userInterface.display("Bienvenue sur super caltoche !");
         userInterface.display("-------------------------------------------------");
     }
-
-
-    /**
-     * Method calling interface to get a Double value.
-     *
-     * @return Double value
-     */
-    private static Double getDoubleInput() {
-        Double value = null;
-        while (value == null) {
-            try {
-                value = Double.parseDouble(userInterface.getContent());
-            } catch (Exception e) {
-                userInterface.display(
-                        "Une erreur est survenue, la valeur insérée n'est pas un double");
-                LOGGER.error("Erreur lors du parsing des doubles (choix du menu) "
-                        + System.lineSeparator() + e.getMessage());
-            }
-        }
-        return value;
-    }
-
 
     /**
      * Display menu message.

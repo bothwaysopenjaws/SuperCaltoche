@@ -16,6 +16,7 @@
 package com.iia.calculette;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Test;
 
@@ -66,5 +67,11 @@ public class ApplicationTest {
     @Test
     public void testComputeOperationMod() {
         assertEquals(Application.computeOperation("mod(2 , 2)"), "mod(2 , 2) = 0.0");
+    }
+
+    @Test
+    public void testConstructor() {
+        Application app = new Application();
+        assertNotNull(app);
     }
 }
