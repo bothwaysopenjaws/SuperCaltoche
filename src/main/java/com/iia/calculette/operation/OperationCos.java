@@ -9,7 +9,7 @@ public class OperationCos extends AbstractOperation {
 
     /**
      * Execute cos.
-     * @result double of firstValue
+     * @return double of firstValue
      */
     protected double operationExecute() {
         return Math.cos(this.firstValue);

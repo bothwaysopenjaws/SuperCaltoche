@@ -48,7 +48,7 @@ public abstract class AbstractOperation {
 
     /**
      * Assign the first value of the operation.
-     * @param double value
+     * @param firstValue value
      */
     public void setFirstValue(Double firstValue) {
         final String methodName = "setFirstValue";
@@ -58,7 +58,7 @@ public abstract class AbstractOperation {
 
     /**
      * Assign the second value of the operation.
-     * @param double value
+     * @param secondValue value
      */
     public void setSecondValue(Double secondValue) {
         final String methodName = "setSecondValue";
