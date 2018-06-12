@@ -11,17 +11,17 @@ import java.util.Scanner;
  * @version 1.0
  */
 public final class UIConsole implements InterfaceUI {
-    
+
     /** Console, to be instanciated if null.*/
     private static final UIConsole CONSOLE = new UIConsole();
-    
+
     /**
      * Private constructor.
      */
     private UIConsole() {
         super();
     }
-    
+
     /**
      * Get the singleton of the class.
      * @return UIConsole the singleton
@@ -42,17 +42,18 @@ public final class UIConsole implements InterfaceUI {
      * Grab context from the console.
      * @return String the content read within the console
      */
+    @SuppressWarnings("resource")
     @Override
     public String getContent() {
-        return new Scanner(System.in,"UTF-8").nextLine().toString();
+        return new Scanner(System.in, "UTF-8").nextLine().toString();
     }
 
     /**
      * Clear the console.
      */
-	@Override
-	public void clear() {
-		//System.out.flush();  
-	}
+    @Override
+    public void clear() {
+        //System.out.flush();
+    }
 
 }

@@ -31,7 +31,7 @@ public abstract class AbstractOperation {
     public double operation() {
         final String methodName = "operation";
         logger.debug(methodName + ": firstValue=" + firstValue);
-        logger.debug(methodName + ": secondValue=" + firstValue);
+        logger.debug(methodName + ": secondValue=" + secondValue);
 
         final double result = this.operationExecute();
 
