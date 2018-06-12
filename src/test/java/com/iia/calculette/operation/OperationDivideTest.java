@@ -42,7 +42,7 @@ public class OperationDivideTest {
     public void testOperation() {
         OperationDivide operationDivide = new OperationDivide();
 
-        operationDivide.setFirstValue(10.0);		
+        operationDivide.setFirstValue(10.0);
         operationDivide.setSecondValue(2.0);
         assertEquals((Double)operationDivide.operation(), (Double)5.0);
     }

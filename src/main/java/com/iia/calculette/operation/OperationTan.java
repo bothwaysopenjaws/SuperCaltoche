@@ -16,14 +16,15 @@ public class OperationTan implements Operation{
      */
     @Override
     public double operation() {
-        return Math.tan(this.firstValue);
+        double returnValue = Math.tan(this.firstValue);
+        return returnValue;
     }
 
     /**
      * Assign the first value of the operation.
      */
     @Override
-    public void setFirstValue(Double firstValue) {
+    public void setFirstValue(final Double firstValue) {
         this.firstValue = firstValue;
     }
 
@@ -34,4 +35,12 @@ public class OperationTan implements Operation{
     public Double getFirstValue() {
         return firstValue;
     }
+
+    /**
+     * Class constructor.
+     */
+    public OperationTan() {
+        super();
+    }
+
 }
