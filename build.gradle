@@ -92,7 +92,7 @@ jacocoTestReport {
 
 pmd {
     pmdTest.enabled = false
-    ruleSets = ["java-basic",
+    /*ruleSets = ["java-basic",
       "java-braces",
       "java-clone",
       "java-codesize",
@@ -106,9 +106,9 @@ pmd {
       "java-naming",
       "java-optimizations",
       "java-strings",
-      "java-unusedcode"]
+      "java-unusedcode"]*/
 //    toolVersion = '5.8.1'
-//    ruleSetFiles = files("...")
+    ruleSetFiles = files("config/pmd/pmd.xml")
     ignoreFailures = true
 }
 
@@ -129,7 +129,7 @@ task cpd {
 
         ant.taskdef(name: 'cpd', classname: 'net.sourceforge.pmd.cpd.CPDTask', classpath: configurations.pmd.asPath)
 
-        ant.cpd(minimumTokenCount: '5', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
+        ant.cpd(minimumTokenCount: '30', format: 'xml', outputFile: new File(cpdOutputDir, 'cpd.xml')) {
             fileset(dir: 'src') {
                 include(name: '**/*.java')
             }
