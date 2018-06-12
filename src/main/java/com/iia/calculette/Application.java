@@ -73,12 +73,6 @@ public final class Application{
                     operations.add(
                             computeOperation(userInterface.getContent())
                             );
-                    /*userInterface.display("Merci de saisir votre calcul :");
-                    calcul = new Expression(userInterface.getContent());
-                    System.out.println("Résultat : " + calcul.calculate());
-                    String methodName = "Calcul simple";
-                    LOGGER.debug(methodName + ": " + calcul.getExpressionString());
-                    LOGGER.debug(methodName + "- Resultat obtenu : " + calcul.calculate());*/
                     break;
                 case 2:
                     showHistoric();
@@ -90,9 +84,6 @@ public final class Application{
                     break;
                 }
             }
-            /*if (calcul != null && numberVar != 3) {
-                operations.add(calcul.getExpressionString() + " = " + calcul.calculate());
-            }*/
         }while(isRunning);
     }
 
@@ -100,16 +91,13 @@ public final class Application{
      * Display welcoming message.
      */
     private static void getWelcomeMessage() {
-        userInterface.display("-------------------------------------------------");
         userInterface.display("Bienvenue sur super caltoche !");
-        userInterface.display("-------------------------------------------------");
     }
 
     /**
      * Display menu message.
      */
     private static void getMenu() {
-        userInterface.display("-------------------------------------------------");
         userInterface.display("Menu des choix :");
         userInterface.display("1 - Calcul (avec ou sans parenthèses)");
         userInterface.display("2 - Afficher historique des calculs");
