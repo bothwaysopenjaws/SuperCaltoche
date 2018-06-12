@@ -109,12 +109,10 @@ public final class Application{
      * Display the historic of operations.
      */
     private static void showHistoric() {
-        userInterface.display("-----------------HISTORIQUE----------------------");
         for (String operation : operations) {
             userInterface.display(operation);
             LOGGER.debug("Historique : " + operation);
         }
-        userInterface.display("-------------------------------------------------");
     }
 
     /**
@@ -124,17 +122,9 @@ public final class Application{
      */
     protected static String computeOperation(String expressionString) {
         String returnValue = expressionString;
-
-        try {
-            Expression calcul = new Expression(expressionString);
-            userInterface.display(" = "+ calcul.calculate());
-            returnValue = returnValue + " = "+ calcul.calculate();
-      } catch (Exception e) {
-          userInterface.display("Une erreur est survenue !");
-          returnValue = returnValue +  " = Une erreur est survenue !" +
-          "Vérifiez votre expression !";
-          LOGGER.error("Une erreur est survenue lors du calcul : " + e.getMessage());
-      }
-      return returnValue;
+        Expression calcul = new Expression(expressionString);
+        userInterface.display(" = "+ calcul.calculate());
+        returnValue = returnValue + " = "+ calcul.calculate();
+        return returnValue;
     }
 }
