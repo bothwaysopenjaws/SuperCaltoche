@@ -79,5 +79,5 @@ public abstract class AbstractOperation {
     public Double getSecondValue() {
         return secondValue;
     }
-    
+
 }

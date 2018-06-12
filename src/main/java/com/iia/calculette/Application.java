@@ -6,14 +6,11 @@ package com.iia.calculette;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.iia.calculette.operation.AbstractOperation;
-import com.iia.calculette.operation.OperationAdd;
 import com.iia.calculette.operation.OperationCos;
-import com.iia.calculette.operation.OperationDivide;
-import com.iia.calculette.operation.OperationMultiply;
 import com.iia.calculette.operation.OperationSin;
-import com.iia.calculette.operation.OperationSub;
 import com.iia.calculette.operation.OperationTan;
 import com.iia.calculette.ui.*;
+import org.mariuszgromada.math.mxparser.*;
 
 /**
  * Mon application.
@@ -33,10 +30,10 @@ public final class Application{
   * Log4j logger.
   */
   final static Log logger = LogFactory.getLog(Application.class);
+
   /**
    * Private constructor of application class.
    */
-
   private Application() {
   }
 
@@ -48,7 +45,7 @@ public final class Application{
   public static void main(final String[] args) {
     getWelcomeMessage();
     Double firstValue;
-    Double secondValue;
+    Expression calcul;
     do {
       getMenu();
       int numberVar = -1;
@@ -64,56 +61,20 @@ public final class Application{
       }
 
       AbstractOperation operation;
-      if (numberVar >= 0 && numberVar <= 7) {
+      if (numberVar >= 0 && numberVar <= 4) {
           switch (numberVar) {
             case 0:
               isRunning = false;
               break;
             case 1:
-              operation = new OperationAdd();
-              userInterface.clear();
-              userInterface.display("Inserer la première valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              userInterface.display("Inserer la seconde valeur");
-              secondValue = getDoubleInput();
-              operation.setSecondValue(secondValue);
-              System.out.println("Résultat : " + operation.operation());
+              userInterface.display("Merci de saisir votre calcul :");
+              calcul = new Expression(userInterface.getContent());
+              System.out.println("Résultat : "+calcul.calculate());
+              final String methodName = "Calcul simple";
+              logger.debug(methodName + ": "+calcul.getExpressionString() );
+              logger.debug(methodName + "- Resultat obtenu : "+calcul.calculate());
               break;
             case 2:
-              operation = new OperationSub();
-              userInterface.clear();
-              userInterface.display("Insérer la première valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              userInterface.display("Insérer la seconde valeur");
-              secondValue = getDoubleInput();
-              operation.setSecondValue(secondValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
-            case 3:
-              operation = new OperationMultiply();
-              userInterface.clear();
-              userInterface.display("Inserer la première valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              userInterface.display("Inserer la seconde valeur");
-              secondValue = getDoubleInput();
-              operation.setSecondValue(secondValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
-            case 4:
-              operation = new OperationDivide();
-              userInterface.clear();
-              userInterface.display("Inserer la première valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              userInterface.display("Inserer la seconde valeur");
-              secondValue = getDoubleInput();
-              operation.setSecondValue(secondValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
-            case 5:
               operation = new OperationSin();
               userInterface.clear();
               userInterface.display("Insérer une valeur");
@@ -121,7 +82,7 @@ public final class Application{
               operation.setFirstValue(firstValue);
               System.out.println("Résultat : " + operation.operation());
               break;
-            case 6:
+            case 3:
               operation = new OperationCos();
               userInterface.clear();
               userInterface.display("Insérer une valeur");
@@ -129,7 +90,7 @@ public final class Application{
               operation.setFirstValue(firstValue);
               System.out.println("Résultat : " + operation.operation());
               break;
-            case 7:
+            case 4:
               operation = new OperationTan();
               userInterface.clear();
               userInterface.display("Insérer une valeur");
@@ -181,13 +142,10 @@ public final class Application{
   private static void getMenu() {
     userInterface.display("-------------------------------------------------");
     userInterface.display("Menu des choix :");
-    userInterface.display("1 - Addition :");
-    userInterface.display("2 - Soustraction :");
-    userInterface.display("3 - Multiplication :");
-    userInterface.display("4 - Division :");
-    userInterface.display("5 - Sin :");
-    userInterface.display("6 - Cos :");
-    userInterface.display("7 - Tan :");
+    userInterface.display("1 - Calcul simple (avec ou sans parenthèses)");
+    userInterface.display("2 - Sin");
+    userInterface.display("3 - Cos");
+    userInterface.display("4 - Tan");
     userInterface.display("0 - Quitter");
   }
 }
