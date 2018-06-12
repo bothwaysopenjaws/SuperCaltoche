@@ -15,6 +15,8 @@
  ******************************************************************************/
 package com.iia.calculette;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 /**
@@ -25,14 +27,44 @@ import org.junit.Test;
 public class ApplicationTest {
 
     @Test
-    public void testApplication() {
-        //Application app = new Application();
-        //Application.main(null);
-        //assertNotNull(app);
+    public void testComputeOperationAdd() {
+        assertEquals(Application.computeOperation("1 + 2"), "1 + 2 = 3.0");
+        assertEquals(Application.computeOperation("1.1 + 2"), "1.1 + 2 = 3.1");
     }
 
     @Test
-    public void testgetMenu() {
+    public void testComputeOperationSub() {
+        assertEquals(Application.computeOperation("1 - 2"), "1 - 2 = -1.0");
+    }
 
+    @Test
+    public void testComputeOperationMultiply() {
+        assertEquals(Application.computeOperation("1 * 2"), "1 * 2 = 2.0");
+        assertEquals(Application.computeOperation("2 * 4"), "2 * 4 = 8.0");
+    }
+
+    @Test
+    public void testComputeOperationDivide() {
+        assertEquals(Application.computeOperation("1 / 2"), "1 / 2 = 0.5");
+    }
+
+    @Test
+    public void testComputeOperationSin() {
+        assertEquals(Application.computeOperation("sin(0)"), "sin(0) = 0.0");
+    }
+
+    @Test
+    public void testComputeOperationCos() {
+        assertEquals(Application.computeOperation("cos(0)"), "cos(0) = 1.0");
+    }
+
+    @Test
+    public void testComputeOperationTan() {
+        assertEquals(Application.computeOperation("tan(0)"), "tan(0) = 0.0");
+    }
+
+    @Test
+    public void testComputeOperationMod() {
+        assertEquals(Application.computeOperation("mod(2 , 2)"), "mod(2 , 2) = 0.0");
     }
 }

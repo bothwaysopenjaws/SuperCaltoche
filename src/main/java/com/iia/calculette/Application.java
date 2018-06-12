@@ -19,132 +19,156 @@ import com.iia.calculette.ui.*;
  */
 public final class Application{
 
-  /** Instantiate userInterface singleton, to display and catch user input.*/
-  private static InterfaceUI userInterface = UIConsole.getUIConsole();
+    /** Instantiate userInterface singleton, to display and catch user input.*/
+    private static InterfaceUI userInterface = UIConsole.getUIConsole();
 
-  /** Boolean set to true to begin loop in main program.*/
-  private static boolean isRunning = true;
+    /** Boolean set to true to begin loop in main program.*/
+    private static boolean isRunning = true;
 
-  /**
-  * Log4j logger.
-  */
-  private static final Log LOGGER = LogFactory.getLog(Application.class);
+    /**
+     * Log4j logger.
+     */
+    private static final Log LOGGER = LogFactory.getLog(Application.class);
 
-  /**
-   * Historic of the operations.
-   */
-  private static ArrayList<String> operations = new ArrayList<String>();
+    /**
+     * Historic of the operations.
+     */
+    private static ArrayList<String> operations = new ArrayList<String>();
 
-  /**
-   * Private constructor of application class.
-   */
-  private Application() {
-  }
+    /**
+     * Private constructor of application class.
+     */
+    private Application() {
+    }
 
-  /**
-   * Entry-point of application.
-   *
-   * @param args Argument from CLI.
-   */
-  public static void main(String[] args) throws NullPointerException, RuntimeException {
-    getWelcomeMessage();
-    do {
-      getMenu();
-      Expression calcul = null;
-      int numberVar = -1;
-      try {
-        numberVar = Integer.parseInt(userInterface.getContent());
-        LOGGER.info("menu choix :" + numberVar);
+    /**
+     * Entry-point of application.
+     *
+     * @param args Argument from CLI.
+     */
+    public static void main(String[] args) throws NullPointerException, RuntimeException {
+        getWelcomeMessage();
+        do {
+            getMenu();
+            int numberVar = -1;
+            try {
+                numberVar = Integer.parseInt(userInterface.getContent());
+                LOGGER.info("menu choix :" + numberVar);
 
-      } catch (Exception e) {
-        userInterface
-            .display("La valeur insérée ne correspond pas à un chiffre.");
-        LOGGER.error("Erreur lors du parsing de numbVar (choix du menu) "
-            + System.lineSeparator() + e.getMessage());
-        numberVar = -1;
-      }
+            } catch (Exception e) {
+                userInterface
+                .display("La valeur insérée ne correspond pas à un chiffre.");
+                LOGGER.error("Erreur lors du parsing de numbVar (choix du menu) "
+                        + System.lineSeparator() + e.getMessage());
+                numberVar = -1;
+            }
 
-      if (numberVar >= 0 && numberVar <= 6) {
-          switch (numberVar) {
-            case 0:
-              isRunning = false;
-              break;
-            case 1:
-              userInterface.display("Merci de saisir votre calcul :");
-              calcul = new Expression(userInterface.getContent());
-              System.out.println("Résultat : " + calcul.calculate());
-              String methodName = "Calcul simple";
-              LOGGER.debug(methodName + ": " + calcul.getExpressionString());
-              LOGGER.debug(methodName + "- Resultat obtenu : " + calcul.calculate());
-              break;
-            case 2:
-                showHistoric();
-                break;
-            case 3:
-                operations.clear();
-                break;
-            default:
-              break;
-          }
-        }
-      if (calcul != null && numberVar != 3) {
-          operations.add(calcul.getExpressionString() + " = " + calcul.calculate());
-      }
-    }while(isRunning);
-  }
+            if (numberVar >= 0 && numberVar <= 3) {
+                switch (numberVar) {
+                case 0:
+                    isRunning = false;
+                    break;
+                case 1:
+                    userInterface.display("Merci de saisir votre calcul :");
+                    operations.add(
+                            computeOperation(userInterface.getContent())
+                            );
+                    /*userInterface.display("Merci de saisir votre calcul :");
+                    calcul = new Expression(userInterface.getContent());
+                    System.out.println("Résultat : " + calcul.calculate());
+                    String methodName = "Calcul simple";
+                    LOGGER.debug(methodName + ": " + calcul.getExpressionString());
+                    LOGGER.debug(methodName + "- Resultat obtenu : " + calcul.calculate());*/
+                    break;
+                case 2:
+                    showHistoric();
+                    break;
+                case 3:
+                    operations.clear();
+                    break;
+                default:
+                    break;
+                }
+            }
+            /*if (calcul != null && numberVar != 3) {
+                operations.add(calcul.getExpressionString() + " = " + calcul.calculate());
+            }*/
+        }while(isRunning);
+    }
 
     /**
      * Display welcoming message.
      */
-  private static void getWelcomeMessage() {
-    userInterface.display("-------------------------------------------------");
-    userInterface.display("Bienvenue sur super caltoche !");
-    userInterface.display("-------------------------------------------------");
+    private static void getWelcomeMessage() {
+        userInterface.display("-------------------------------------------------");
+        userInterface.display("Bienvenue sur super caltoche !");
+        userInterface.display("-------------------------------------------------");
     }
 
 
-  /**
-   * Method calling interface to get a Double value.
-   *
-   * @return Double value
-   */
-  private static Double getDoubleInput() {
-    Double value = null;
-    while (value == null) {
-      try {
-        value = Double.parseDouble(userInterface.getContent());
+    /**
+     * Method calling interface to get a Double value.
+     *
+     * @return Double value
+     */
+    private static Double getDoubleInput() {
+        Double value = null;
+        while (value == null) {
+            try {
+                value = Double.parseDouble(userInterface.getContent());
+            } catch (Exception e) {
+                userInterface.display(
+                        "Une erreur est survenue, la valeur insérée n'est pas un double");
+                LOGGER.error("Erreur lors du parsing des doubles (choix du menu) "
+                        + System.lineSeparator() + e.getMessage());
+            }
+        }
+        return value;
+    }
+
+
+    /**
+     * Display menu message.
+     */
+    private static void getMenu() {
+        userInterface.display("-------------------------------------------------");
+        userInterface.display("Menu des choix :");
+        userInterface.display("1 - Calcul (avec ou sans parenthèses)");
+        userInterface.display("2 - Afficher historique des calculs");
+        userInterface.display("3 - Supprimer historique des calculs");
+        userInterface.display("0 - Quitter");
+    }
+
+    /**
+     * Display the historic of operations.
+     */
+    private static void showHistoric() {
+        userInterface.display("-----------------HISTORIQUE----------------------");
+        for (String operation : operations) {
+            userInterface.display(operation);
+            LOGGER.debug("Historique : " + operation);
+        }
+        userInterface.display("-------------------------------------------------");
+    }
+
+    /**
+     * To compute operations.
+     * @param expressionString the string to calculate
+     * @return String value
+     */
+    protected static String computeOperation(String expressionString) {
+        String returnValue = expressionString;
+
+        try {
+            Expression calcul = new Expression(expressionString);
+            userInterface.display(" = "+ calcul.calculate());
+            returnValue = returnValue + " = "+ calcul.calculate();
       } catch (Exception e) {
-        userInterface.display(
-            "Une erreur est survenue, la valeur insérée n'est pas un double");
-            LOGGER.error("Erreur lors du parsing des doubles (choix du menu) "
-            + System.lineSeparator() + e.getMessage());
+          userInterface.display("Une erreur est survenue !");
+          returnValue = returnValue +  " = Une erreur est survenue !" +
+          "Vérifiez votre expression !";
+          LOGGER.error("Une erreur est survenue lors du calcul : " + e.getMessage());
       }
+      return returnValue;
     }
-    return value;
-  }
-
-
-  /**
-   * Display menu message.
-   */
-  private static void getMenu() {
-    userInterface.display("-------------------------------------------------");
-    userInterface.display("Menu des choix :");
-    userInterface.display("1 - Calcul (avec ou sans parenthèses)");
-    userInterface.display("2 - Afficher historique des calculs");
-    userInterface.display("3 - Supprimer historique des calculs");
-    userInterface.display("0 - Quitter");
-  }
-
-  /**
-   * Display the historic of operations.
-   */
-  private static void showHistoric() {
-      userInterface.display("-----------------HISTORIQUE----------------------");
-      for (String operation : operations) {
-          userInterface.display(operation);
-          LOGGER.debug("Historique : " + operation);
-    }
-      userInterface.display("-------------------------------------------------");
-  }
 }
