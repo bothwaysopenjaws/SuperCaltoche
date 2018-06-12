@@ -3,12 +3,10 @@
  ******************************************************************************/
 package com.iia.calculette;
 
+import java.util.ArrayList;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import com.iia.calculette.operation.AbstractOperation;
-import com.iia.calculette.operation.OperationCos;
-import com.iia.calculette.operation.OperationSin;
-import com.iia.calculette.operation.OperationTan;
 import com.iia.calculette.ui.*;
 import org.mariuszgromada.math.mxparser.*;
 
@@ -32,6 +30,11 @@ public final class Application{
   final static Log logger = LogFactory.getLog(Application.class);
 
   /**
+   * Historic of the operations
+   */
+  private static ArrayList<String> operations = new ArrayList<String>();
+
+  /**
    * Private constructor of application class.
    */
   private Application() {
@@ -45,9 +48,10 @@ public final class Application{
   public static void main(final String[] args) {
     getWelcomeMessage();
     Double firstValue;
-    Expression calcul;
+    Expression calcul = null;
     do {
       getMenu();
+      calcul = null;
       int numberVar = -1;
       try {
         numberVar = Integer.parseInt(userInterface.getContent());
@@ -60,8 +64,7 @@ public final class Application{
         numberVar = -1;
       }
 
-      AbstractOperation operation;
-      if (numberVar >= 0 && numberVar <= 4) {
+      if (numberVar >= 0 && numberVar <= 6) {
           switch (numberVar) {
             case 0:
               isRunning = false;
@@ -75,33 +78,18 @@ public final class Application{
               logger.debug(methodName + "- Resultat obtenu : "+calcul.calculate());
               break;
             case 2:
-              operation = new OperationSin();
-              userInterface.clear();
-              userInterface.display("Insérer une valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
+                showHistoric();
+                break;
             case 3:
-              operation = new OperationCos();
-              userInterface.clear();
-              userInterface.display("Insérer une valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
-            case 4:
-              operation = new OperationTan();
-              userInterface.clear();
-              userInterface.display("Insérer une valeur");
-              firstValue = getDoubleInput();
-              operation.setFirstValue(firstValue);
-              System.out.println("Résultat : " + operation.operation());
-              break;
+                operations.clear();
+                break;
             default:
               break;
           }
         }
+      if (calcul != null && numberVar != 3) {
+          operations.add(calcul.getExpressionString()+" = "+calcul.calculate());
+      }
     }while(isRunning);
   }
 
@@ -142,10 +130,20 @@ public final class Application{
   private static void getMenu() {
     userInterface.display("-------------------------------------------------");
     userInterface.display("Menu des choix :");
-    userInterface.display("1 - Calcul simple (avec ou sans parenthèses)");
-    userInterface.display("2 - Sin");
-    userInterface.display("3 - Cos");
-    userInterface.display("4 - Tan");
+    userInterface.display("1 - Calcul (avec ou sans parenthèses)");
+    userInterface.display("2 - Afficher historique des calculs");
+    userInterface.display("3 - Supprimer historique des calculs");
     userInterface.display("0 - Quitter");
+  }
+
+  /**
+   * Display the historic of operations.
+   */
+  private static void showHistoric() {
+      userInterface.display("-----------------HISTORIQUE----------------------");
+      for (String operation : operations) {
+          userInterface.display(operation);
+    }
+      userInterface.display("-------------------------------------------------");
   }
 }
