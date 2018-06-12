@@ -5,55 +5,13 @@ package com.iia.calculette.operation;
  * @author estephant
  *
  */
-public class OperationSub implements Operation {
-	
+public class OperationSub extends AbstractOperation {
+
 	/**
-	 * Left value of the operation.
+	 * Execute substraction.
+	 * @return result of substraction
 	 */
-	private Double firstValue;
-	
-	/**
-	 * Right value of the operation.
-	 */
-	private Double secondValue;
-	
-	/**
-	 * Constructor of the operation.
-	 */
-	@Override
-	public double operation() {
+	protected double operationExecute() {
 		return this.firstValue - this.secondValue;
-	}
-
-	/**
-	 * Assign the first value of the operation.
-	 */
-	@Override
-	public void setFirstValue(Double firstValue) {
-		this.firstValue = firstValue;
-	}
-
-	/**
-	 * Assign the second value of the operation.
-	 */
-	@Override
-	public void setSecondValue(Double secondValue) {
-		this.secondValue = secondValue;
-	}
-	
-	/**
-	 * Get the first value of the operation.
-	 * @return Double FirstValue
-	 */
-	public Double getFirstValue() {
-		return firstValue;
-	}
-
-	/**
-	 * Get the second value of the operation.
-	 * @return Double secondValue
-	 */
-	public Double getSecondValue() {
-		return secondValue;
 	}
 }

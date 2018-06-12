@@ -14,7 +14,7 @@ public class UIConsoleTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
-    
+
     @Test
     public void testDisplay() {
         UIConsole testUI = UIConsole.getUIConsole();
@@ -22,12 +22,12 @@ public class UIConsoleTest {
         System.out.print("test");
         assertEquals("test", outContent.toString());
     }
-    
+
     @Test
     public void testGetContent() {
 
     }
-    
+
     @Before
     public void setUpStreams() {
         System.setOut(new PrintStream(outContent));

@@ -12,7 +12,7 @@ import com.iia.calculette.Application;
 
 /**
  * Implementation of interface, for console UI.
- * @author Aurélien Le Pévédic
+ * @author AurÃ©lien Le PÃ©vÃ©dic
  * @version 1.0
  */
 public final class UIConsole implements InterfaceUI {
@@ -53,17 +53,17 @@ public final class UIConsole implements InterfaceUI {
      * Grab context from the console.
      * @return String the content read within the console
      */
+    @SuppressWarnings("resource")
     @Override
     public String getContent() {
-        return new Scanner(System.in,"UTF-8").nextLine().toString();
+        return new Scanner(System.in, "UTF-8").nextLine().toString();
     }
 
     /**
      * Clear the console.
      */
-	@Override
-	public void clear() {
-		//System.out.flush();
-	}
-
+    @Override
+    public void clear() {
+        //System.out.flush();
+    }
 }
