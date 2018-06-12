@@ -11,7 +11,7 @@ public class OperationMultiply implements OperationDoubleValues {
     * Left value of the operation.
     */
     private Double firstValue;
-    
+
     /**
      * Right value of the operation.
      */

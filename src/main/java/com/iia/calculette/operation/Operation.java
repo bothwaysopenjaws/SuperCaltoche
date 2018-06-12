@@ -14,11 +14,11 @@ public interface Operation{
      * @return double result
      */
     public double operation();
-    
+
     /**
      * First value of the calculation.
      * @param firstValue
      */
     public void setFirstValue(Double firstValue);
-    
+
 }

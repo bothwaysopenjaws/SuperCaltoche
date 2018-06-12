@@ -40,16 +40,18 @@ public final class Application{
         Double secondValue;
         do {
             getMenu();
-            int numberVar = -1 ;
+            int numberVar = -1;
             try {
                 numberVar = Integer.parseInt(userInterface.getContent());
-        		} catch (Exception e) {
-        			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
-        			numberVar = -1;
-        		}
+                } catch (Exception e) {
+                    userInterface.display(
+                            "La valeur insérée ne correspond pas à un chiffre."
+                            );
+                    numberVar = -1;
+                }
 
-        	Operation operation = null;
-        	OperationDoubleValues operationDoubleValues = null;
+            Operation operation = null;
+            OperationDoubleValues operationDoubleValues = null;
 
             if (numberVar >= 0 && numberVar <= 5) {
                 switch (numberVar) {
@@ -57,18 +59,18 @@ public final class Application{
                     isRunning = false;
                     break;
                 case 1:
-                	operationDoubleValues = new OperationAdd();
-                	userInterface.clear();
-                	userInterface.display("Inserer la première valeur");
-                	firstValue = getDoubleInput();
-                	operationDoubleValues.setFirstValue(firstValue);
-                	userInterface.display("Inserer la seconde valeur");
-                	secondValue = getDoubleInput();
-                	operationDoubleValues.setSecondValue(secondValue);
-                	System.out.println("Résultat : " + operationDoubleValues.operation());
+                    operationDoubleValues = new OperationAdd();
+                    userInterface.clear();
+                    userInterface.display("Inserer la première valeur");
+                    firstValue = getDoubleInput();
+                    operationDoubleValues.setFirstValue(firstValue);
+                    userInterface.display("Inserer la seconde valeur");
+                    secondValue = getDoubleInput();
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 2:
-                	operationDoubleValues = new OperationSub();
+                    operationDoubleValues = new OperationSub();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
@@ -79,7 +81,7 @@ public final class Application{
                     System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 3:
-                	operationDoubleValues = new OperationMultiply();
+                    operationDoubleValues = new OperationMultiply();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
@@ -90,7 +92,7 @@ public final class Application{
                     System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 4:
-                	operationDoubleValues = new OperationDivide();
+                    operationDoubleValues = new OperationDivide();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
@@ -101,7 +103,7 @@ public final class Application{
                     System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 5:
-                	operation = new OperationSin();
+                    operation = new OperationSin();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
@@ -109,7 +111,7 @@ public final class Application{
                     System.out.println("Résultat : " + operation.operation());
                     break;
                 case 6:
-                	operation = new OperationCos();
+                    operation = new OperationCos();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
@@ -117,7 +119,7 @@ public final class Application{
                     System.out.println("Résultat : " + operation.operation());
                     break;
                 case 7:
-                	operation = new OperationTan();
+                    operation = new OperationTan();
                     userInterface.clear();
                     userInterface.display("Inserer une valeur");
                     firstValue = getDoubleInput();
@@ -143,9 +145,11 @@ public final class Application{
         Double value = null;
         while (value == null) {
             try {
-            	value = Double.parseDouble(userInterface.getContent());
+                value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
-            	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
+                userInterface.display(
+                        "Une erreur est survenue, la valeur insérée n'est pas un double"
+                        );
             }
         }
         return value;

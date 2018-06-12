@@ -10,41 +10,41 @@ import org.junit.Test;
  *
  */
 public class OperationMultiplyTest {
-	
-	/**
-	 * Test the assignment of the first value.
-	 */
-	@Test
-	public void testSetFirstValue() {
-		OperationMultiply operationMulti = new OperationMultiply();
-		
-		operationMulti.setFirstValue(10.5);
-		
-		assertEquals(operationMulti.getFirstValue(), (Double)10.5);
-	}
-	
-	/**
-	 * Test the assignment of the second value.
-	 */
-	@Test
-	public void testSetSecondValue() {
-	    OperationMultiply operationMulti = new OperationMultiply();
-		
-	    operationMulti.setSecondValue(10.5);
-		
-		assertEquals(operationMulti.getSecondValue(), (Double)10.5);
-	}
-	
-	
-	/**
-	 * Test the assignment of the second value.
-	 */
-	@Test
-	public void testOperation() {
-	    OperationMultiply operationMulti = new OperationMultiply();
-		
-	    operationMulti.setFirstValue(1.0);		
-	    operationMulti.setSecondValue(6.0);
-		assertEquals((Double)operationMulti.operation(), (Double)6.0);
-	}
+
+    /**
+     * Test the assignment of the first value.
+     */
+    @Test
+    public void testSetFirstValue() {
+        OperationMultiply operationMulti = new OperationMultiply();
+
+        operationMulti.setFirstValue(10.5);
+
+        assertEquals(operationMulti.getFirstValue(), (Double)10.5);
+    }
+
+    /**
+     * Test the assignment of the second value.
+     */
+    @Test
+    public void testSetSecondValue() {
+        OperationMultiply operationMulti = new OperationMultiply();
+
+        operationMulti.setSecondValue(10.5);
+
+        assertEquals(operationMulti.getSecondValue(), (Double)10.5);
+    }
+
+
+    /**
+     * Test the assignment of the second value.
+     */
+    @Test
+    public void testOperation() {
+        OperationMultiply operationMulti = new OperationMultiply();
+
+        operationMulti.setFirstValue(1.0);
+        operationMulti.setSecondValue(6.0);
+        assertEquals((Double)operationMulti.operation(), (Double)6.0);
+    }
 }
