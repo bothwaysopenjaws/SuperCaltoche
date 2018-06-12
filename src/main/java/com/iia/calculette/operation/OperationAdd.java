@@ -8,7 +8,8 @@ package com.iia.calculette.operation;
 public class OperationAdd extends AbstractOperation {
 
 	/**
-	 * Constructor of the operation.
+	 * Execute addition.
+   * @return result of addition
 	 */
 	protected double operationExecute() {
 		return this.firstValue + this.secondValue;

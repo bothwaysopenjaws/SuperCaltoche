@@ -7,9 +7,10 @@ package com.iia.calculette.operation;
  */
 public class OperationDivide extends AbstractOperation {
 
-	/**
-	 * Constructor of the operation.
-	 */
+  /**
+   * Execute division.
+   * @return result of division
+   */
 	protected double operationExecute() {
 		return this.firstValue / this.secondValue;
 	}

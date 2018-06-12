@@ -7,9 +7,10 @@ package com.iia.calculette.operation;
  */
 public class OperationMultiply extends AbstractOperation {
 
-	/**
-	 * Constructor of the operation.
-	 */
+  /**
+   * Execute multiplication.
+   * @return result of multiplication
+   */
 	protected double operationExecute() {
 		return this.firstValue * this.secondValue;
 	}

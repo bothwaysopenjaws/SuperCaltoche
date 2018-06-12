@@ -6,9 +6,10 @@ package com.iia.calculette.operation;
  *
  */
 public class OperationSub extends AbstractOperation {
-	
+
 	/**
-	 * Constructor of the operation.
+	 * Execute substraction.
+	 * @return result of substraction
 	 */
 	protected double operationExecute() {
 		return this.firstValue - this.secondValue;
