@@ -302,7 +302,6 @@
     <rule ref="rulesets/java/naming.xml/GenericsNaming"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/optimizations.html -->
-    <rule ref="rulesets/java/optimizations.xml/AvoidInstantiatingObjectsInLoops"></rule>
     <rule ref="rulesets/java/optimizations.xml/UseArrayListInsteadOfVector"></rule>
     <rule ref="rulesets/java/optimizations.xml/UseArraysAsList"></rule>
     <rule ref="rulesets/java/optimizations.xml/AddEmptyString"></rule>
@@ -352,7 +351,6 @@
         </properties>
     </rule>
     <rule ref="rulesets/java/unnecessary.xml/UselessParentheses"></rule>
-    <rule ref="rulesets/java/unnecessary.xml/UnnecessaryModifier"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/unusedcode.html -->
     <rule ref="rulesets/java/unusedcode.xml/UnusedPrivateField"></rule>
