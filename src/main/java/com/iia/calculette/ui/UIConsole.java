@@ -8,8 +8,6 @@ import java.util.Scanner;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.iia.calculette.Application;
-
 /**
  * Implementation of interface, for console UI.
  * @author Aurélien Le Pévédic
@@ -23,7 +21,7 @@ public final class UIConsole implements InterfaceUI {
     /**
      * Log4j logger.
      */
-    final static Log logger = LogFactory.getLog(UIConsole.class);
+    private static final Log LOGGER = LogFactory.getLog(UIConsole.class);
 
     /**
      * Private constructor.
@@ -37,7 +35,7 @@ public final class UIConsole implements InterfaceUI {
      * @return UIConsole the singleton
      */
     public static UIConsole getUIConsole() {
-        logger.info("UI console OK.");
+        LOGGER.info("UI console OK.");
         return CONSOLE;
     }
     /**
@@ -45,7 +43,7 @@ public final class UIConsole implements InterfaceUI {
      * @param content text displayed to user
      */
     @Override
-    public final void display(final String content) {
+    public void display(final String content) {
         System.out.println(content);
     }
 

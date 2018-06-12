@@ -14,16 +14,16 @@ public interface InterfaceUI {
      * Display the text in parameter.
      * @param content text displayed to user
      */
-    public void display(String content);
+    void display(String content);
 
     /**
      * Grab context from the console.
      * @return String the content read within the console
      */
-    public String getContent();
+    String getContent();
 
     /**
      * To clear the console.
      */
-    public void clear();
+    void clear();
 }

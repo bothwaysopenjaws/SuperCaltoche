@@ -242,7 +242,6 @@
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/logging-java.html -->
     <rule ref="rulesets/java/logging-java.xml/MoreThanOneLogger"></rule>
     <rule ref="rulesets/java/logging-java.xml/LoggerIsNotStaticFinal"></rule>
-    <rule ref="rulesets/java/logging-java.xml/SystemPrintln"></rule>
     <rule ref="rulesets/java/logging-java.xml/AvoidPrintStackTrace"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/migrating.html -->
@@ -309,7 +308,6 @@
     <rule ref="rulesets/java/naming.xml/GenericsNaming"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/optimizations.html -->
-    <rule ref="rulesets/java/optimizations.xml/AvoidInstantiatingObjectsInLoops"></rule>
     <rule ref="rulesets/java/optimizations.xml/UseArrayListInsteadOfVector"></rule>
     <rule ref="rulesets/java/optimizations.xml/UseArraysAsList"></rule>
     <rule ref="rulesets/java/optimizations.xml/AddEmptyString"></rule>
@@ -324,13 +322,6 @@
     <rule ref="rulesets/java/strictexception.xml/AvoidLosingExceptionInformation"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/strings.html -->
-    <rule ref="rulesets/java/strings.xml/AvoidDuplicateLiterals">
-        <properties>
-            <property name="maxDuplicateLiterals" value="3"/>      <!-- Max duplicate literals -->
-            <property name="minimumLength" value="0"/>      <!-- Minimum string length to check -->
-            <property name="skipAnnotations" value="true"/>      <!-- Skip literals within annotations -->
-        </properties>
-    </rule>
     <rule ref="rulesets/java/strings.xml/StringInstantiation"></rule>
     <rule ref="rulesets/java/strings.xml/StringToString"></rule>
     <rule ref="rulesets/java/strings.xml/UseStringBufferLength"></rule>
@@ -345,7 +336,6 @@
     <rule ref="rulesets/java/strings.xml/AvoidStringBufferField"></rule>
 
     <!-- See http://pmd.sourceforge.net/pmd-5.0.1/rules/java/typeresolution.html -->
-    <rule ref="rulesets/java/typeresolution.xml/LooseCoupling"></rule>
     <rule ref="rulesets/java/typeresolution.xml/CloneMethodMustImplementCloneable"></rule>
     <rule ref="rulesets/java/typeresolution.xml/UnusedImports"></rule>
 
