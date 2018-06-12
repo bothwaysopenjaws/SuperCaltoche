@@ -41,13 +41,14 @@ public abstract class AbstractOperation {
     }
 
     /**
-     *
-     * @return
+     * Result of operation.
+     * @return double value
      */
     protected abstract double operationExecute();
 
     /**
      * Assign the first value of the operation.
+     * @param double value
      */
     public void setFirstValue(Double firstValue) {
         final String methodName = "setFirstValue";
@@ -57,6 +58,7 @@ public abstract class AbstractOperation {
 
     /**
      * Assign the second value of the operation.
+     * @param double value
      */
     public void setSecondValue(Double secondValue) {
         final String methodName = "setSecondValue";
