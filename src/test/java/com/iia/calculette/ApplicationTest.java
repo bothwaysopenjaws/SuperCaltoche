@@ -30,4 +30,9 @@ public class ApplicationTest {
         //Application.main(null);
         //assertNotNull(app);
     }
+
+    @Test
+    public void testgetMenu() {
+
+    }
 }

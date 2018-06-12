@@ -143,6 +143,7 @@ public final class Application{
       userInterface.display("-----------------HISTORIQUE----------------------");
       for (String operation : operations) {
           userInterface.display(operation);
+          LOGGER.debug("Historique : " + operation);
     }
       userInterface.display("-------------------------------------------------");
   }

@@ -26,7 +26,7 @@ public final class UIConsole implements InterfaceUI {
     /**
      * Private constructor.
      */
-    private UIConsole() {
+    public UIConsole() {
         super();
     }
 
@@ -55,13 +55,5 @@ public final class UIConsole implements InterfaceUI {
     @Override
     public String getContent() {
         return new Scanner(System.in, "UTF-8").nextLine().toString();
-    }
-
-    /**
-     * Clear the console.
-     */
-    @Override
-    public void clear() {
-        //System.out.flush();
     }
 }

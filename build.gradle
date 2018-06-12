@@ -28,7 +28,7 @@ dependencies {
   compile 'log4j:log4j:1.2.17'
   compile 'commons-logging:commons-logging:1.2'
   compile group: 'org.mariuszgromada.math', name: 'MathParser.org-mXparser', version: '4.1.1'
-
+  testCompile 'com.github.stefanbirkner:system-rules:1.18.0'
 }
 
 def gradleExtra="${project.rootDir}/gradle/script"
