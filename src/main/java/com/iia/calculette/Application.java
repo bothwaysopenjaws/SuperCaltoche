@@ -2,10 +2,15 @@
  * Copyright 2018.
  ******************************************************************************/
 package com.iia.calculette;
+import com.iia.calculette.operation.Operation;
 import com.iia.calculette.operation.OperationAdd;
+import com.iia.calculette.operation.OperationCos;
 import com.iia.calculette.operation.OperationDivide;
+import com.iia.calculette.operation.OperationDoubleValues;
 import com.iia.calculette.operation.OperationMultiply;
+import com.iia.calculette.operation.OperationSin;
 import com.iia.calculette.operation.OperationSub;
+import com.iia.calculette.operation.OperationTan;
 import com.iia.calculette.ui.*;
 /**
  * Mon application.
@@ -13,14 +18,14 @@ import com.iia.calculette.ui.*;
  * @author Aurélien Le Pévédic
  *
  */
-public final class Application{        
+public final class Application{
 
     /** Instantiate userInterface singleton, to display and catch user input.*/
     private static InterfaceUI userInterface = UIConsole.getUIConsole();
-    
+
     /** Boolean set to true to begin loop in main program.*/
     private static boolean isRunning = true;
-    
+
     /**
      * Private constructor of application class.
      */
@@ -36,73 +41,100 @@ public final class Application{
         do {
             getMenu();
             int numberVar = -1 ;
-        	try {
-        		numberVar = Integer.parseInt(userInterface.getContent());
+            try {
+                numberVar = Integer.parseInt(userInterface.getContent());
         		} catch (Exception e) {
         			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
         			numberVar = -1;
-			}
-        	
+        		}
+
+        	Operation operation = null;
+        	OperationDoubleValues operationDoubleValues = null;
+
             if (numberVar >= 0 && numberVar <= 5) {
                 switch (numberVar) {
                 case 0:
                     isRunning = false;
                     break;
                 case 1:
-                	OperationAdd operationAdd = new OperationAdd();
+                	operationDoubleValues = new OperationAdd();
                 	userInterface.clear();
                 	userInterface.display("Inserer la première valeur");
                 	firstValue = getDoubleInput();
-                	operationAdd.setFirstValue(firstValue);
+                	operationDoubleValues.setFirstValue(firstValue);
                 	userInterface.display("Inserer la seconde valeur");
                 	secondValue = getDoubleInput();
-                	operationAdd.setSecondValue(secondValue);
-                	System.out.println("Résultat : " + operationAdd.operation());
+                	operationDoubleValues.setSecondValue(secondValue);
+                	System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 2:
-                    OperationSub operationSub = new OperationSub();
+                	operationDoubleValues = new OperationSub();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationSub.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationSub.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationSub.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 3:
-                    OperationMultiply operationMulti = new OperationMultiply();
+                	operationDoubleValues = new OperationMultiply();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationMulti.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationMulti.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationMulti.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
                     break;
                 case 4:
-                    OperationDivide operationDivide = new OperationDivide();
+                	operationDoubleValues = new OperationDivide();
                     userInterface.clear();
                     userInterface.display("Inserer la première valeur");
                     firstValue = getDoubleInput();
-                    operationDivide.setFirstValue(firstValue);
+                    operationDoubleValues.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
-                    operationDivide.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationDivide.operation());
+                    operationDoubleValues.setSecondValue(secondValue);
+                    System.out.println("Résultat : " + operationDoubleValues.operation());
+                    break;
+                case 5:
+                	operation = new OperationSin();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
+                    break;
+                case 6:
+                	operation = new OperationCos();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
+                    break;
+                case 7:
+                	operation = new OperationTan();
+                    userInterface.clear();
+                    userInterface.display("Inserer une valeur");
+                    firstValue = getDoubleInput();
+                    operation.setFirstValue(firstValue);
+                    System.out.println("Résultat : " + operation.operation());
                     break;
                 default:
                     break;
-                }			
-			}
-            
+                }
+            }
+
             userInterface.clear();
 
         }
         while(isRunning);
     }
-    
+
     /**
      * Method calling interface to get a Double value.
      * @return Double value
@@ -114,11 +146,11 @@ public final class Application{
             	value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
             	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
-			}
-        } 
+            }
+        }
         return value;
     }
-    
+
     /**
      * Display welcoming message.
      */
@@ -127,7 +159,7 @@ public final class Application{
         userInterface.display("Bienvenue sur super caltoche!");
         userInterface.display("-------------------------------------------------");
     }
-    
+
     /**
      * Display menu message.
      */
@@ -138,6 +170,9 @@ public final class Application{
         userInterface.display("2 - Soustraction :");
         userInterface.display("3 - Multiplication :");
         userInterface.display("4 - Division :");
+        userInterface.display("5 - Sin :");
+        userInterface.display("6 - Cos :");
+//        userInterface.display("7 - Tan :");
         userInterface.display("0 - Quitter");
     }
 }

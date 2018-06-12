@@ -5,8 +5,8 @@ package com.iia.calculette.operation;
  * @author estephant
  *
  */
-public class OperationSub implements Operation {
-	
+public class OperationSub implements OperationDoubleValues {
+
 	/**
 	 * Left value of the operation.
 	 */
@@ -36,7 +36,6 @@ public class OperationSub implements Operation {
 	/**
 	 * Assign the second value of the operation.
 	 */
-	@Override
 	public void setSecondValue(Double secondValue) {
 		this.secondValue = secondValue;
 	}
