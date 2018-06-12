@@ -19,7 +19,7 @@ import org.junit.Test;
 
 /**
  * Test class.
- * @author Aurélien Le Pévédic
+ * @author AurÃ©lien Le PÃ©vÃ©dic
  * @version 1.0
  */
 public class ApplicationTest {

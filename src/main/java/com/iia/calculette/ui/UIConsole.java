@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 /**
  * Implementation of interface, for console UI.
- * @author Aurélien Le Pévédic
+ * @author AurÃ©lien Le PÃ©vÃ©dic
  * @version 1.0
  */
 public final class UIConsole implements InterfaceUI {

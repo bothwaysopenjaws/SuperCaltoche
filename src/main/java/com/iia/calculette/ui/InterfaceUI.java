@@ -5,7 +5,7 @@ package com.iia.calculette.ui;
 
 /**
  * Interface class for UI to be implemented.
- * @author Aurélien Le Pévédic
+ * @author AurÃ©lien Le PÃ©vÃ©dic
  * @version 1.0
  */
 public interface InterfaceUI {

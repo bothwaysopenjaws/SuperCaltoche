@@ -10,7 +10,7 @@ import com.iia.calculette.ui.*;
 /**
  * Mon application.
  * @version 1.0
- * @author Aurélien Le Pévédic
+ * @author AurÃ©lien Le PÃ©vÃ©dic
  *
  */
 public final class Application{        
@@ -39,7 +39,7 @@ public final class Application{
         	try {
         		numberVar = Integer.parseInt(userInterface.getContent());
         		} catch (Exception e) {
-        			userInterface.display("La valeur insérée ne correspond pas à un chiffre.");
+        			userInterface.display("La valeur insÃ©rÃ©e ne correspond pas Ã  un chiffre.");
         			numberVar = -1;
 			}
         	
@@ -51,46 +51,46 @@ public final class Application{
                 case 1:
                 	OperationAdd operationAdd = new OperationAdd();
                 	userInterface.clear();
-                	userInterface.display("Inserer la première valeur");
+                	userInterface.display("Inserer la premiÃ¨re valeur");
                 	firstValue = getDoubleInput();
                 	operationAdd.setFirstValue(firstValue);
                 	userInterface.display("Inserer la seconde valeur");
                 	secondValue = getDoubleInput();
                 	operationAdd.setSecondValue(secondValue);
-                	System.out.println("Résultat : " + operationAdd.operation());
+                	System.out.println("RÃ©sultat : " + operationAdd.operation());
                     break;
                 case 2:
                     OperationSub operationSub = new OperationSub();
                     userInterface.clear();
-                    userInterface.display("Inserer la première valeur");
+                    userInterface.display("Inserer la premiÃ¨re valeur");
                     firstValue = getDoubleInput();
                     operationSub.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
                     operationSub.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationSub.operation());
+                    System.out.println("RÃ©sultat : " + operationSub.operation());
                     break;
                 case 3:
                     OperationMultiply operationMulti = new OperationMultiply();
                     userInterface.clear();
-                    userInterface.display("Inserer la première valeur");
+                    userInterface.display("Inserer la premiÃ¨re valeur");
                     firstValue = getDoubleInput();
                     operationMulti.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
                     operationMulti.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationMulti.operation());
+                    System.out.println("RÃ©sultat : " + operationMulti.operation());
                     break;
                 case 4:
                     OperationDivide operationDivide = new OperationDivide();
                     userInterface.clear();
-                    userInterface.display("Inserer la première valeur");
+                    userInterface.display("Inserer la premiÃ¨re valeur");
                     firstValue = getDoubleInput();
                     operationDivide.setFirstValue(firstValue);
                     userInterface.display("Inserer la seconde valeur");
                     secondValue = getDoubleInput();
                     operationDivide.setSecondValue(secondValue);
-                    System.out.println("Résultat : " + operationDivide.operation());
+                    System.out.println("RÃ©sultat : " + operationDivide.operation());
                     break;
                 default:
                     break;
@@ -113,7 +113,7 @@ public final class Application{
             try {
             	value = Double.parseDouble(userInterface.getContent());
             } catch (Exception e) {
-            	userInterface.display("Une erreur est survenue, la valeur insérée n'est pas un double");
+            	userInterface.display("Une erreur est survenue, la valeur insÃ©rÃ©e n'est pas un double");
 			}
         } 
         return value;

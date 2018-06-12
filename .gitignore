@@ -2,3 +2,12 @@
 /build/*
 .gradle
 .classpath
+
+# Logs directory
+/logs/*
+
+# Idea
+out/
+*.ipr
+*.iws
+*.iml
